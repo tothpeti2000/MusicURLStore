@@ -182,9 +182,9 @@
 
     <aside
       class="position-fixed d-flex flex-column justify-content-between p-5"
-      style="top: 25%; left: 60%; width: 40%; height: 65%"
+      style="top: 25%; left: 60%; width: 40%; height: 75%"
     >
-      <div class="alert alert-primary text-center p-5">
+      <div class="alert alert-primary text-center p-5 rounded-pill">
         <h1 class="fst-italic">Found a nice song?</h1>
         <button
           type="button"
@@ -196,12 +196,20 @@
         </button>
       </div>
 
-      <iframe
-        class="w-100"
-        src="https://www.youtube.com/embed/lF8s2bZUwlM?autoplay=1"
-        title="YouTube video player"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-      ></iframe>
+      <div>
+        <iframe
+          class="w-100"
+          src="https://www.youtube.com/embed/lF8s2bZUwlM?autoplay=1"
+          title="YouTube video player"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        ></iframe>
+        <div class="bg-secondary bg-opacity-25 p-3 rounded">
+          <p class="fw-bold mb-0">
+            Playing now:
+            <span class="fw-normal ms-2">Skillet - Rise</span>
+          </p>
+        </div>
+      </div>
     </aside>
 
     <div
