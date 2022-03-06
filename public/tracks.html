@@ -10,26 +10,31 @@
       integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
       crossorigin="anonymous"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css"
+    />
     <title>Music URL Store</title>
   </head>
 
   <body>
     <header
-      class="d-flex justify-content-between sticky-top p-4 bg-light shadow"
+      class="d-flex justify-content-between align-items-baseline p-4 bg-light shadow"
     >
-      <a href="./index.html">Icon</a>
+      <a href="./index.html" class="text-black">
+        <i class="bi bi-house-door-fill fs-2"></i>
+      </a>
       <h1>App Title</h1>
-      <h1>Icon</h1>
+      <i class="bi bi-moon-fill fs-2 btn"></i>
     </header>
 
     <main class="p-4">
       <div class="d-flex justify-content-between mb-2">
         <h1>My Tracks</h1>
-        <input
-          type="text"
-          placeholder="Search icon"
-          class="align-self-center rounded-2"
-        />
+        <div class="align-self-center rounded-2 input-group w-25">
+          <i class="bi bi-search input-group-text"></i>
+          <input type="text" class="form-control" />
+        </div>
       </div>
 
       <table class="table table-hover table-striped" style="width: 60%">
@@ -42,54 +47,138 @@
           </tr>
         </thead>
 
-        <tbody>
+        <tbody class="align-text-top">
           <tr>
             <td>Rise</td>
             <td>Skillet</td>
             <td>One of the greatest songs on the album Rise</td>
-            <td>Icons</td>
+            <td>
+              <i class="bi bi-play-circle-fill btn"></i>
+              <i
+                class="bi bi-pencil-fill btn"
+                data-bs-toggle="modal"
+                data-bs-target="#editModal"
+              ></i>
+              <i
+                class="bi bi-trash3-fill btn"
+                data-bs-toggle="modal"
+                data-bs-target="#deleteModal"
+              ></i>
+            </td>
           </tr>
 
           <tr>
             <td>Awake and Alive</td>
             <td>Skillet</td>
             <td></td>
-            <td>Icons</td>
+            <td>
+              <i class="bi bi-play-circle-fill btn"></i>
+              <i
+                class="bi bi-pencil-fill btn"
+                data-bs-toggle="modal"
+                data-bs-target="#editModal"
+              ></i>
+              <i
+                class="bi bi-trash3-fill btn"
+                data-bs-toggle="modal"
+                data-bs-target="#deleteModal"
+              ></i>
+            </td>
           </tr>
 
           <tr>
             <td>Hero</td>
             <td>Skillet</td>
             <td>Jen and John sound absolutely amazing together</td>
-            <td>Icons</td>
+            <td>
+              <i class="bi bi-play-circle-fill btn"></i>
+              <i
+                class="bi bi-pencil-fill btn"
+                data-bs-toggle="modal"
+                data-bs-target="#editModal"
+              ></i>
+              <i
+                class="bi bi-trash3-fill btn"
+                data-bs-toggle="modal"
+                data-bs-target="#deleteModal"
+              ></i>
+            </td>
           </tr>
 
           <tr>
             <td>Whispers in the Dark</td>
             <td>Skillet</td>
             <td></td>
-            <td>Icons</td>
+            <td>
+              <i class="bi bi-play-circle-fill btn"></i>
+              <i
+                class="bi bi-pencil-fill btn"
+                data-bs-toggle="modal"
+                data-bs-target="#editModal"
+              ></i>
+              <i
+                class="bi bi-trash3-fill btn"
+                data-bs-toggle="modal"
+                data-bs-target="#deleteModal"
+              ></i>
+            </td>
           </tr>
 
           <tr>
             <td>Monster</td>
             <td>Skillet</td>
             <td></td>
-            <td>Icons</td>
+            <td>
+              <i class="bi bi-play-circle-fill btn"></i>
+              <i
+                class="bi bi-pencil-fill btn"
+                data-bs-toggle="modal"
+                data-bs-target="#editModal"
+              ></i>
+              <i
+                class="bi bi-trash3-fill btn"
+                data-bs-toggle="modal"
+                data-bs-target="#deleteModal"
+              ></i>
+            </td>
           </tr>
 
           <tr>
             <td>Ignite</td>
             <td>Skillet</td>
             <td>Those guitar riffs are insane</td>
-            <td>Icons</td>
+            <td>
+              <i class="bi bi-play-circle-fill btn"></i>
+              <i
+                class="bi bi-pencil-fill btn"
+                data-bs-toggle="modal"
+                data-bs-target="#editModal"
+              ></i>
+              <i
+                class="bi bi-trash3-fill btn"
+                data-bs-toggle="modal"
+                data-bs-target="#deleteModal"
+              ></i>
+            </td>
           </tr>
 
           <tr>
             <td>Standing in the Storm</td>
             <td>Skillet</td>
             <td></td>
-            <td>Icons</td>
+            <td>
+              <i class="bi bi-play-circle-fill btn"></i>
+              <i
+                class="bi bi-pencil-fill btn"
+                data-bs-toggle="modal"
+                data-bs-target="#editModal"
+              ></i>
+              <i
+                class="bi bi-trash3-fill btn"
+                data-bs-toggle="modal"
+                data-bs-target="#deleteModal"
+              ></i>
+            </td>
           </tr>
 
           <!-- Additional rows for scrolling -->
@@ -97,84 +186,228 @@
             <td>Rise</td>
             <td>Skillet</td>
             <td>One of the greatest songs on the album Rise</td>
-            <td>Icons</td>
+            <td>
+              <i class="bi bi-play-circle-fill btn"></i>
+              <i
+                class="bi bi-pencil-fill btn"
+                data-bs-toggle="modal"
+                data-bs-target="#editModal"
+              ></i>
+              <i
+                class="bi bi-trash3-fill btn"
+                data-bs-toggle="modal"
+                data-bs-target="#deleteModal"
+              ></i>
+            </td>
           </tr>
 
           <tr>
             <td>Rise</td>
             <td>Skillet</td>
             <td>One of the greatest songs on the album Rise</td>
-            <td>Icons</td>
+            <td>
+              <i class="bi bi-play-circle-fill btn"></i>
+              <i
+                class="bi bi-pencil-fill btn"
+                data-bs-toggle="modal"
+                data-bs-target="#editModal"
+              ></i>
+              <i
+                class="bi bi-trash3-fill btn"
+                data-bs-toggle="modal"
+                data-bs-target="#deleteModal"
+              ></i>
+            </td>
           </tr>
 
           <tr>
             <td>Rise</td>
             <td>Skillet</td>
             <td>One of the greatest songs on the album Rise</td>
-            <td>Icons</td>
+            <td>
+              <i class="bi bi-play-circle-fill btn"></i>
+              <i
+                class="bi bi-pencil-fill btn"
+                data-bs-toggle="modal"
+                data-bs-target="#editModal"
+              ></i>
+              <i
+                class="bi bi-trash3-fill btn"
+                data-bs-toggle="modal"
+                data-bs-target="#deleteModal"
+              ></i>
+            </td>
           </tr>
 
           <tr>
             <td>Rise</td>
             <td>Skillet</td>
             <td>One of the greatest songs on the album Rise</td>
-            <td>Icons</td>
+            <td>
+              <i class="bi bi-play-circle-fill btn"></i>
+              <i
+                class="bi bi-pencil-fill btn"
+                data-bs-toggle="modal"
+                data-bs-target="#editModal"
+              ></i>
+              <i
+                class="bi bi-trash3-fill btn"
+                data-bs-toggle="modal"
+                data-bs-target="#deleteModal"
+              ></i>
+            </td>
           </tr>
 
           <tr>
             <td>Rise</td>
             <td>Skillet</td>
             <td>One of the greatest songs on the album Rise</td>
-            <td>Icons</td>
+            <td>
+              <i class="bi bi-play-circle-fill btn"></i>
+              <i
+                class="bi bi-pencil-fill btn"
+                data-bs-toggle="modal"
+                data-bs-target="#editModal"
+              ></i>
+              <i
+                class="bi bi-trash3-fill btn"
+                data-bs-toggle="modal"
+                data-bs-target="#deleteModal"
+              ></i>
+            </td>
           </tr>
 
           <tr>
             <td>Rise</td>
             <td>Skillet</td>
             <td>One of the greatest songs on the album Rise</td>
-            <td>Icons</td>
+            <td>
+              <i class="bi bi-play-circle-fill btn"></i>
+              <i
+                class="bi bi-pencil-fill btn"
+                data-bs-toggle="modal"
+                data-bs-target="#editModal"
+              ></i>
+              <i
+                class="bi bi-trash3-fill btn"
+                data-bs-toggle="modal"
+                data-bs-target="#deleteModal"
+              ></i>
+            </td>
           </tr>
 
           <tr>
             <td>Rise</td>
             <td>Skillet</td>
             <td>One of the greatest songs on the album Rise</td>
-            <td>Icons</td>
+            <td>
+              <i class="bi bi-play-circle-fill btn"></i>
+              <i
+                class="bi bi-pencil-fill btn"
+                data-bs-toggle="modal"
+                data-bs-target="#editModal"
+              ></i>
+              <i
+                class="bi bi-trash3-fill btn"
+                data-bs-toggle="modal"
+                data-bs-target="#deleteModal"
+              ></i>
+            </td>
           </tr>
 
           <tr>
             <td>Rise</td>
             <td>Skillet</td>
             <td>One of the greatest songs on the album Rise</td>
-            <td>Icons</td>
+            <td>
+              <i class="bi bi-play-circle-fill btn"></i>
+              <i
+                class="bi bi-pencil-fill btn"
+                data-bs-toggle="modal"
+                data-bs-target="#editModal"
+              ></i>
+              <i
+                class="bi bi-trash3-fill btn"
+                data-bs-toggle="modal"
+                data-bs-target="#deleteModal"
+              ></i>
+            </td>
           </tr>
 
           <tr>
             <td>Rise</td>
             <td>Skillet</td>
             <td>One of the greatest songs on the album Rise</td>
-            <td>Icons</td>
+            <td>
+              <i class="bi bi-play-circle-fill btn"></i>
+              <i
+                class="bi bi-pencil-fill btn"
+                data-bs-toggle="modal"
+                data-bs-target="#editModal"
+              ></i>
+              <i
+                class="bi bi-trash3-fill btn"
+                data-bs-toggle="modal"
+                data-bs-target="#deleteModal"
+              ></i>
+            </td>
           </tr>
 
           <tr>
             <td>Rise</td>
             <td>Skillet</td>
             <td>One of the greatest songs on the album Rise</td>
-            <td>Icons</td>
+            <td>
+              <i class="bi bi-play-circle-fill btn"></i>
+              <i
+                class="bi bi-pencil-fill btn"
+                data-bs-toggle="modal"
+                data-bs-target="#editModal"
+              ></i>
+              <i
+                class="bi bi-trash3-fill btn"
+                data-bs-toggle="modal"
+                data-bs-target="#deleteModal"
+              ></i>
+            </td>
           </tr>
 
           <tr>
             <td>Rise</td>
             <td>Skillet</td>
             <td>One of the greatest songs on the album Rise</td>
-            <td>Icons</td>
+            <td>
+              <i class="bi bi-play-circle-fill btn"></i>
+              <i
+                class="bi bi-pencil-fill btn"
+                data-bs-toggle="modal"
+                data-bs-target="#editModal"
+              ></i>
+              <i
+                class="bi bi-trash3-fill btn"
+                data-bs-toggle="modal"
+                data-bs-target="#deleteModal"
+              ></i>
+            </td>
           </tr>
 
           <tr>
             <td>Rise</td>
             <td>Skillet</td>
             <td>One of the greatest songs on the album Rise</td>
-            <td>Icons</td>
+            <td>
+              <i class="bi bi-play-circle-fill btn"></i>
+              <i
+                class="bi bi-pencil-fill btn"
+                data-bs-toggle="modal"
+                data-bs-target="#editModal"
+              ></i>
+              <i
+                class="bi bi-trash3-fill btn"
+                data-bs-toggle="modal"
+                data-bs-target="#deleteModal"
+              ></i>
+            </td>
           </tr>
         </tbody>
       </table>
@@ -190,7 +423,7 @@
           type="button"
           class="btn btn-primary w-100"
           data-bs-toggle="modal"
-          data-bs-target="#trackModal"
+          data-bs-target="#addModal"
         >
           ADD IT HERE
         </button>
@@ -214,7 +447,7 @@
 
     <div
       class="modal fade"
-      id="trackModal"
+      id="addModal"
       tabindex="-1"
       aria-labelledby="Track form"
       aria-hidden="true"
@@ -276,6 +509,122 @@
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-primary">Save</button>
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="modal fade"
+      id="editModal"
+      tabindex="-1"
+      aria-labelledby="Track form"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Edit Track</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <div class="mb-3">
+              <label for="url" class="form-label fw-bold">URL</label>
+              <input
+                type="text"
+                class="form-control"
+                id="url"
+                aria-describedby="URL"
+                value="https://www.youtube.com/watch?v=lF8s2bZUwlM"
+              />
+            </div>
+
+            <div class="mb-3">
+              <label for="title" class="form-label fw-bold">Title</label>
+              <input
+                type="text"
+                class="form-control"
+                id="title"
+                aria-describedby="Title"
+                value="Ignite"
+              />
+            </div>
+
+            <div class="mb-3">
+              <label for="artist" class="form-label fw-bold">Artist</label>
+              <input
+                type="text"
+                class="form-control"
+                id="artist"
+                aria-describedby="Artist"
+                value="Skillet"
+              />
+            </div>
+
+            <div class="mb-3">
+              <label for="description" class="form-label fw-bold"
+                >Description</label
+              >
+              <textarea
+                type="text"
+                class="form-control"
+                id="description"
+                aria-describedby="Description"
+              >
+Those guitar riffs are insane
+                </textarea
+              >
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary">Save</button>
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="modal fade"
+      id="deleteModal"
+      tabindex="-1"
+      aria-labelledby="Track form"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Delete Track</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <p>Are you sure you want to remove this song from the list?</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-danger">Delete</button>
             <button
               type="button"
               class="btn btn-secondary"
