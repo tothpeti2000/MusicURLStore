@@ -42,6 +42,8 @@
           <i
             class="bi bi-x-lg btn btn-outline-danger position-absolute"
             style="right: 0; z-index: 10"
+            data-bs-toggle="modal"
+            data-bs-target="#deleteModal"
           ></i>
           <img src="assets/Skillet.jpg" alt="Skillet" class="card-img-top" />
           <div class="card-body">
@@ -55,6 +57,8 @@
           <i
             class="bi bi-x-lg btn btn-outline-danger position-absolute"
             style="right: 0; z-index: 10"
+            data-bs-toggle="modal"
+            data-bs-target="#deleteModal"
           ></i>
           <img
             src="assets/Spiritbox.jpg"
@@ -72,6 +76,8 @@
           <i
             class="bi bi-x-lg btn btn-outline-danger position-absolute"
             style="right: 0; z-index: 10"
+            data-bs-toggle="modal"
+            data-bs-target="#deleteModal"
           ></i>
           <img
             src="assets/Avenged Sevenfold.jpg"
@@ -86,6 +92,41 @@
         </div>
       </div>
     </main>
+
+    <div
+      class="modal fade"
+      id="deleteModal"
+      tabindex="-1"
+      aria-labelledby="Track form"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Delete Playlist</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <p>Are you sure you want to remove this playlist from the list?</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-danger">Delete</button>
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <button
       class="btn btn-primary rounded-circle position-fixed fs-1"
