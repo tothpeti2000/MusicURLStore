@@ -1,7 +1,13 @@
-.zoom {
+.zoom,
+.img-zoom img {
   transition: transform 0.5s ease;
 }
 
-.zoom:hover {
+.zoom:hover,
+.img-zoom:hover img {
   transform: scale(1.05);
+}
+
+.img-zoom {
+  overflow: hidden;
 }
