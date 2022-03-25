@@ -16,19 +16,19 @@ module.exports = (app) => {
   const objRepo = {
     tracks: [
       {
-        _id: 1,
+        _id: "ObjectID_T1",
         title: "Rise",
         artist: "Skillet",
         description: "One of the greatest songs on the album Rise",
       },
       {
-        _id: 2,
+        _id: "ObjectID_T2",
         title: "Awake and Alive",
         artist: "Skillet",
         description: "One of the greatest songs on the album Awake",
       },
       {
-        _id: 3,
+        _id: "ObjectID_T3",
         title: "Hero",
         artist: "Skillet",
         description: "One of the greatest songs on the album Awake",
@@ -36,17 +36,17 @@ module.exports = (app) => {
     ],
     playlists: [
       {
-        _id: 1,
+        _id: "ObjectID_P1",
         name: "Skillet",
         tracks: [
           {
-            _id: 1,
+            _id: "ObjectID_T1",
             title: "Rise",
             artist: "Skillet",
             description: "One of the greatest songs on the album Rise",
           },
           {
-            _id: 2,
+            _id: "ObjectID_T2",
             title: "Awake and Alive",
             artist: "Skillet",
             description: "One of the greatest songs on the album Awake",
@@ -54,11 +54,11 @@ module.exports = (app) => {
         ],
       },
       {
-        _id: 2,
+        _id: "ObjectID_P2",
         name: "Skillet Playlist",
         tracks: [
           {
-            _id: 3,
+            _id: "ObjectID_T3",
             title: "Hero",
             artist: "Skillet",
             description: "One of the greatest songs on the album Awake",

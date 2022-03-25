@@ -5,24 +5,9 @@
 
 module.exports = (objRepo) => {
   return (req, res, next) => {
-    res.locals.playlist = {
-      _id: 1,
-      name: "Skillet",
-      tracks: [
-        {
-          _id: 1,
-          title: "Rise",
-          artist: "Skillet",
-          description: "One of the greatest songs on the album Rise",
-        },
-        {
-          _id: 2,
-          title: "Awake and Alive",
-          artist: "Skillet",
-          description: "One of the greatest songs on the album Awake",
-        },
-      ],
-    };
+    res.locals.playlist = objRepo.playlists.find(
+      (p) => p._id === req.params.playlistID
+    );
 
     return next();
   };
