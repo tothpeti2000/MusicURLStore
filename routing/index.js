@@ -94,7 +94,7 @@ module.exports = (app) => {
     renderMW(objRepo, "playlists")
   );
 
-  app.post(
+  app.get(
     "/playlists/search",
     getQueryPlaylistsMW(objRepo),
     renderMW(objRepo, "playlists")
