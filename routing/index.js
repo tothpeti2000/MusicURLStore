@@ -13,4 +13,8 @@ module.exports = (app) => {
     getTrackMW(objRepo),
     renderMW(objRepo, "tracks")
   );
+
+  app.get("/playlists", renderMW(objRepo, "playlists"));
+
+  app.get("/playlists/add", renderMW(objRepo, "createplaylist"));
 };
