@@ -1,6 +1,7 @@
 const renderMW = require("../middleware/renderMW");
 const getTracksMW = require("../middleware/tracks/getTracksMW");
 const getTrackMW = require("../middleware/tracks/getTrackMW");
+const getQueryTracksMW = require("../middleware/tracks/getQueryTracksMW");
 const deleteTrackMW = require("../middleware/tracks/deleteTrackMW");
 
 module.exports = (app) => {
