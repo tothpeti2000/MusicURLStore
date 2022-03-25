@@ -72,7 +72,7 @@ module.exports = (app) => {
 
   app.get("/tracks", getTracksMW(objRepo), renderMW(objRepo, "tracks"));
 
-  app.post(
+  app.get(
     "/tracks/search",
     getQueryTracksMW(objRepo),
     renderMW(objRepo, "tracks")
