@@ -9,20 +9,9 @@
         <a href="/playlists" class="text-muted me-2"
           ><i class="bi bi-arrow-left"></i
         ></a>
-
-        Skillet Playlist
+        <%= playlist.name %> Playlist
       </h1>
-      <div class="form-floating rounded-2 w-25">
-        <input
-          type="text"
-          id="search"
-          class="form-control"
-          placeholder="Search"
-        />
-        <label for="search">
-          <i class="bi bi-search"></i>
-        </label>
-      </div>
+      <%- include("./components/playListTrackSearchBar") %>
     </div>
 
     <table class="table table-hover table-striped" style="width: 60%">

@@ -50,7 +50,7 @@ module.exports = (app) => {
   app.get(
     "/playlist/:playlistID",
     getPlaylistMW(objRepo),
-    renderMW(objRepo, "playlistDetails")
+    renderMW(objRepo, "playlistdetails")
   );
 
   app.get("/playlists/add", renderMW(objRepo, "createplaylist"));
