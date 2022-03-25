@@ -28,7 +28,29 @@ module.exports = (app) => {
     deleteTrackMW(objRepo)
   );
 
-  app.get("/playlists", renderMW(objRepo, "playlists"));
+  app.get(
+    "/playlists",
+    getPlaylistsMW(objRepo),
+    renderMW(objRepo, "playlists")
+  );
+
+  app.post(
+    "/playlists/search",
+    getQueryPlaylistsMW(objRepo),
+    renderMW(objRepo, "playlists")
+  );
 
   app.get("/playlists/add", renderMW(objRepo, "createplaylist"));
+
+  app.post(
+    "/playlists/edit/:playlistID",
+    getPlaylistMW(objRepo),
+    savePlaylistMW(objRepo)
+  );
+
+  app.get(
+    "/playlists/delete/:playlistID",
+    getPlaylistMW(objRepo),
+    deletePlaylistMW(objRepo)
+  );
 };
