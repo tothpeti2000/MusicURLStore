@@ -7,6 +7,7 @@ module.exports = (objRepo) => {
   return (req, res, next) => {
     res.locals.playlists = [
       {
+        _id: 1,
         name: "Skillet",
         tracks: [
           {
@@ -24,6 +25,7 @@ module.exports = (objRepo) => {
         ],
       },
       {
+        _id: 2,
         name: "Skillet Playlist",
         tracks: [
           {
