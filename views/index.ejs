@@ -1,14 +1,7 @@
-<body class="vh-100">
-  <header
-    class="d-flex justify-content-between align-items-baseline p-4 bg-light shadow"
-  >
-    <a href="/" class="text-black">
-      <i class="bi bi-house-door-fill fs-2"></i>
-    </a>
-    <h1>App Title</h1>
-    <i class="bi bi-moon-fill fs-2 btn"></i>
-  </header>
+<%- include("header") %>
 
+<body class="vh-100">
+  <%- include("navbar") %>
   <main class="d-flex justify-content-around align-items-center h-75">
     <div class="card w-25 shadow-lg text-center zoom">
       <h1 class="card-img-top bg-primary" style="padding: 20%; font-size: 5rem">
@@ -36,3 +29,5 @@
     </div>
   </main>
 </body>
+
+<%- include("footer") %>
