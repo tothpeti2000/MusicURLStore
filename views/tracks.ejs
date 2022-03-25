@@ -22,10 +22,11 @@
       </thead>
 
       <tbody class="align-text-top">
+        <% tracks.forEach(track => { %>
         <tr>
-          <td>Rise</td>
-          <td>Skillet</td>
-          <td>One of the greatest songs on the album Rise</td>
+          <td><%= track.title %></td>
+          <td><%= track.artist %></td>
+          <td><%= track.description %></td>
           <td>
             <i class="bi bi-play-circle-fill btn"></i>
             <i
@@ -40,120 +41,7 @@
             ></i>
           </td>
         </tr>
-
-        <tr>
-          <td>Awake and Alive</td>
-          <td>Skillet</td>
-          <td></td>
-          <td>
-            <i class="bi bi-play-circle-fill btn"></i>
-            <i
-              class="bi bi-pencil-fill btn"
-              data-bs-toggle="modal"
-              data-bs-target="#editModal"
-            ></i>
-            <i
-              class="bi bi-trash3-fill btn"
-              data-bs-toggle="modal"
-              data-bs-target="#deleteModal"
-            ></i>
-          </td>
-        </tr>
-
-        <tr>
-          <td>Hero</td>
-          <td>Skillet</td>
-          <td>Jen and John sound absolutely amazing together</td>
-          <td>
-            <i class="bi bi-play-circle-fill btn"></i>
-            <i
-              class="bi bi-pencil-fill btn"
-              data-bs-toggle="modal"
-              data-bs-target="#editModal"
-            ></i>
-            <i
-              class="bi bi-trash3-fill btn"
-              data-bs-toggle="modal"
-              data-bs-target="#deleteModal"
-            ></i>
-          </td>
-        </tr>
-
-        <tr>
-          <td>Whispers in the Dark</td>
-          <td>Skillet</td>
-          <td></td>
-          <td>
-            <i class="bi bi-play-circle-fill btn"></i>
-            <i
-              class="bi bi-pencil-fill btn"
-              data-bs-toggle="modal"
-              data-bs-target="#editModal"
-            ></i>
-            <i
-              class="bi bi-trash3-fill btn"
-              data-bs-toggle="modal"
-              data-bs-target="#deleteModal"
-            ></i>
-          </td>
-        </tr>
-
-        <tr>
-          <td>Monster</td>
-          <td>Skillet</td>
-          <td></td>
-          <td>
-            <i class="bi bi-play-circle-fill btn"></i>
-            <i
-              class="bi bi-pencil-fill btn"
-              data-bs-toggle="modal"
-              data-bs-target="#editModal"
-            ></i>
-            <i
-              class="bi bi-trash3-fill btn"
-              data-bs-toggle="modal"
-              data-bs-target="#deleteModal"
-            ></i>
-          </td>
-        </tr>
-
-        <tr>
-          <td>Ignite</td>
-          <td>Skillet</td>
-          <td>Those guitar riffs are insane</td>
-          <td>
-            <i class="bi bi-play-circle-fill btn"></i>
-            <i
-              class="bi bi-pencil-fill btn"
-              data-bs-toggle="modal"
-              data-bs-target="#editModal"
-            ></i>
-            <i
-              class="bi bi-trash3-fill btn"
-              data-bs-toggle="modal"
-              data-bs-target="#deleteModal"
-            ></i>
-          </td>
-        </tr>
-
-        <tr>
-          <td>Standing in the Storm</td>
-          <td>Skillet</td>
-          <td></td>
-          <td>
-            <i class="bi bi-play-circle-fill btn"></i>
-            <i
-              class="bi bi-pencil-fill btn"
-              data-bs-toggle="modal"
-              data-bs-target="#editModal"
-            ></i>
-            <i
-              class="bi bi-trash3-fill btn"
-              data-bs-toggle="modal"
-              data-bs-target="#deleteModal"
-            ></i>
-          </td>
-        </tr>
+        <% }) %>
       </tbody>
     </table>
   </main>
