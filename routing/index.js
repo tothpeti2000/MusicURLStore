@@ -13,7 +13,60 @@ const savePlaylistMW = require("../middleware/playlists/savePlaylistMW");
 const deletePlaylistMW = require("../middleware/playlists/deletePlaylistMW");
 
 module.exports = (app) => {
-  const objRepo = {};
+  const objRepo = {
+    tracks: [
+      {
+        _id: 1,
+        title: "Rise",
+        artist: "Skillet",
+        description: "One of the greatest songs on the album Rise",
+      },
+      {
+        _id: 2,
+        title: "Awake and Alive",
+        artist: "Skillet",
+        description: "One of the greatest songs on the album Awake",
+      },
+      {
+        _id: 3,
+        title: "Hero",
+        artist: "Skillet",
+        description: "One of the greatest songs on the album Awake",
+      },
+    ],
+    playlists: [
+      {
+        _id: 1,
+        name: "Skillet",
+        tracks: [
+          {
+            _id: 1,
+            title: "Rise",
+            artist: "Skillet",
+            description: "One of the greatest songs on the album Rise",
+          },
+          {
+            _id: 2,
+            title: "Awake and Alive",
+            artist: "Skillet",
+            description: "One of the greatest songs on the album Awake",
+          },
+        ],
+      },
+      {
+        _id: 2,
+        name: "Skillet Playlist",
+        tracks: [
+          {
+            _id: 3,
+            title: "Hero",
+            artist: "Skillet",
+            description: "One of the greatest songs on the album Awake",
+          },
+        ],
+      },
+    ],
+  };
 
   app.get("/", renderMW(objRepo, "index"));
 
