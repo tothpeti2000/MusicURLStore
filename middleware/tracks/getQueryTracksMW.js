@@ -14,9 +14,9 @@ module.exports = (objRepo) => {
       },
       {
         _id: 2,
-        title: "Rise",
+        title: "Awake and Alive",
         artist: "Skillet",
-        description: "One of the greatest songs on the album Rise",
+        description: "One of the greatest songs on the album Awake",
       },
     ];
 
