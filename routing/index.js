@@ -47,6 +47,12 @@ module.exports = (app) => {
     renderMW(objRepo, "playlists")
   );
 
+  app.get(
+    "/playlist/:playlistID",
+    getPlaylistMW(objRepo),
+    renderMW(objRepo, "playlistDetails")
+  );
+
   app.get("/playlists/add", renderMW(objRepo, "createplaylist"));
 
   app.post(
