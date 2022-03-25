@@ -1,4 +1,5 @@
 const renderMW = require("../middleware/renderMW");
+const getTracksMW = require("../middleware/tracks/getTracksMW");
 const getTrackMW = require("../middleware/tracks/getTrackMW");
 const deleteTrackMW = require("../middleware/tracks/deleteTrackMW");
 
@@ -7,7 +8,13 @@ module.exports = (app) => {
 
   app.get("/", renderMW(objRepo, "index"));
 
-  app.get("/tracks", renderMW(objRepo, "tracks"));
+  app.get("/tracks", getTracksMW(objRepo), renderMW(objRepo, "tracks"));
+
+  app.post(
+    "/tracks/search",
+    getQueryTracksMW(objRepo),
+    renderMW(objRepo, "tracks")
+  );
 
   app.post(
     "/tracks/edit/:trackID",
