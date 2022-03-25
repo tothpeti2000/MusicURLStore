@@ -1,14 +1,14 @@
-<%- include("header") %>
+<%- include("./components/header") %>
 
 <body>
-  <%- include("navbar") %>
+  <%- include("./components/navbar") %>
   <main class="p-4">
     <div class="d-flex justify-content-between mb-2">
       <h1>
         <a href="/" class="text-muted me-2"><i class="bi bi-arrow-left"></i></a
         >My Tracks
       </h1>
-      <%- include("trackSearchBar") %>
+      <%- include("./components/trackSearchBar") %>
     </div>
 
     <table class="table table-hover table-striped" style="width: 60%">
@@ -78,6 +78,8 @@
     </div>
   </aside>
 
-  <%- include("addTrackForm") %> <%- include("editTrackForm") %> <%-
-  include("deleteTrackForm") %> <%- include("footer") %>
+  <%- include("./components/forms/addTrackForm") %> <%-
+  include("./components/forms/editTrackForm") %> <%-
+  include("./components/forms/deleteTrackForm") %> <%-
+  include("./components/footer") %>
 </body>
