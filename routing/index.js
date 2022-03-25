@@ -80,7 +80,12 @@ module.exports = (app) => {
 
   app.post("/tracks/add", saveTrackMW(objRepo));
 
-  app.post("/tracks/edit/:trackID", getTrackMW(objRepo), saveTrackMW(objRepo));
+  app.use(
+    "/tracks/edit/:trackID",
+    getTrackMW(objRepo),
+    saveTrackMW(objRepo),
+    renderMW(objRepo, "trackEditNewForm")
+  );
 
   app.get(
     "/tracks/delete/:trackID",
