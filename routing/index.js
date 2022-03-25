@@ -20,11 +20,7 @@ module.exports = (app) => {
 
   app.post("/tracks/add", saveTrackMW(objRepo));
 
-  app.post(
-    "/tracks/edit/:trackID",
-    getTrackMW(objRepo),
-    renderMW(objRepo, "tracks")
-  );
+  app.post("/tracks/edit/:trackID", getTrackMW(objRepo), saveTrackMW(objRepo));
 
   app.get(
     "/tracks/delete/:trackID",
