@@ -5,12 +5,7 @@
 
 module.exports = (objRepo) => {
   return (req, res, next) => {
-    res.locals.track = {
-      _id: 1,
-      title: "Rise",
-      artist: "Skillet",
-      description: "One of the greatest songs on the album Rise",
-    };
+    res.locals.track = objRepo.tracks.find((t) => t._id === req.params.trackID);
 
     return next();
   };
