@@ -5,20 +5,11 @@
 
 module.exports = (objRepo) => {
   return (req, res, next) => {
-    res.locals.tracks = [
-      {
-        _id: 1,
-        title: "Rise",
-        artist: "Skillet",
-        description: "One of the greatest songs on the album Rise",
-      },
-      {
-        _id: 2,
-        title: "Awake and Alive",
-        artist: "Skillet",
-        description: "One of the greatest songs on the album Awake",
-      },
-    ];
+    res.locals.tracks = objRepo.tracks.filter(
+      (t) =>
+        t.title.toUpperCase().includes(req.query.q.toUpperCase()) ||
+        t.artist.toUpperCase().includes(req.query.q.toUpperCase())
+    );
 
     return next();
   };
