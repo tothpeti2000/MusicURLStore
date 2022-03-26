@@ -143,7 +143,11 @@ module.exports = (app) => {
     deletePlaylistTrackMW(objRepo)
   );
 
-  app.get("/playlists/add", renderMW(objRepo, "createplaylist"));
+  app.use(
+    "/playlists/add",
+    savePlaylistMW(objRepo),
+    renderMW(objRepo, "createplaylist")
+  );
 
   app.post(
     "/playlists/edit/:playlistID",
