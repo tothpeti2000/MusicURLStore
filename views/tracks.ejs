@@ -1,0 +1,80 @@
+<%- include("./components/header") %>
+
+<body>
+  <%- include("./components/navbar") %>
+  <main class="p-4">
+    <div class="d-flex justify-content-between mb-2">
+      <h1>
+        <a href="/" class="text-muted me-2"><i class="bi bi-arrow-left"></i></a
+        >My Tracks
+      </h1>
+      <%- include("./components/trackSearchBar") %>
+    </div>
+
+    <table class="table table-hover table-striped" style="width: 60%">
+      <thead>
+        <tr>
+          <th>TITLE</th>
+          <th>ARTIST</th>
+          <th>DESCRIPTION</th>
+          <th>OPTIONS</th>
+        </tr>
+      </thead>
+
+      <tbody class="align-text-top">
+        <% tracks.forEach(track => { %>
+        <tr>
+          <td><%= track.title %></td>
+          <td><%= track.artist %></td>
+          <td><%= track.description %></td>
+          <td>
+            <i class="bi bi-play-circle-fill btn"></i>
+            <!--<i
+              class="bi bi-pencil-fill btn"
+              data-bs-toggle="modal"
+              data-bs-target="#editModal"
+            ></i>-->
+            <a href="/tracks/edit/<%= track._id %> ">
+              <i class="bi bi-pencil-fill btn"></i
+            ></a>
+            <i
+              class="bi bi-trash3-fill btn"
+              data-bs-toggle="modal"
+              data-bs-target="#deleteModal"
+            ></i>
+          </td>
+        </tr>
+        <% }) %>
+      </tbody>
+    </table>
+  </main>
+
+  <aside
+    class="position-fixed d-flex flex-column justify-content-between p-5"
+    style="top: 25%; left: 60%; width: 40%; height: 75%"
+  >
+    <div class="alert alert-primary text-center p-5 rounded-pill shadow">
+      <h1 class="fst-italic">Found a nice song?</h1>
+      <a href="/tracks/add">
+        <button type="button" class="btn btn-primary w-100">ADD IT HERE</button>
+      </a>
+    </div>
+
+    <div class="shadow">
+      <iframe
+        class="w-100"
+        src="https://www.youtube.com/embed/lF8s2bZUwlM?autoplay=1"
+        title="YouTube video player"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      ></iframe>
+      <div class="p-3 rounded">
+        <p class="fw-bold mb-0">
+          Playing now:
+          <span class="fw-normal ms-2">Skillet - Ignite</span>
+        </p>
+      </div>
+    </div>
+  </aside>
+  <%- include("./components/forms/deleteTrackForm") %> <%-
+  include("./components/footer") %>
+</body>

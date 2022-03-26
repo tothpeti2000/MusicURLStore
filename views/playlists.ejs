@@ -1,0 +1,49 @@
+<%- include("./components/header") %>
+
+<body>
+  <%- include("./components/navbar") %>
+
+  <main class="p-4">
+    <div class="d-flex justify-content-between mb-2">
+      <h1>
+        <a href="/" class="text-muted me-2"><i class="bi bi-arrow-left"></i></a>
+        My PlayLists
+      </h1>
+      <%- include("./components/playListSearchBar") %>
+    </div>
+
+    <div class="d-flex align-items-center flex-wrap">
+      <% playlists.forEach(playlist => { %>
+      <div class="card w-25 shadow-lg text-center m-3 img-zoom">
+        <i
+          class="bi bi-x-lg btn btn-outline-danger position-absolute"
+          style="right: 0; z-index: 10"
+          data-bs-toggle="modal"
+          data-bs-target="#deleteModal"
+        ></i>
+        <img
+          src="https://picsum.photos/500"
+          alt="Skillet"
+          class="card-img-top"
+        />
+        <div class="card-body">
+          <h2><%= playlist.name %></h2>
+          <p><%= playlist.tracks.length %> tracks</p>
+        </div>
+        <a href="/playlist/<%= playlist._id %>" class="stretched-link"></a>
+      </div>
+      <% }) %>
+    </div>
+  </main>
+
+  <%- include("./components/forms/deletePlaylistForm") %>
+
+  <button
+    class="btn btn-primary rounded-circle position-fixed fs-1"
+    style="width: 100px; height: 100px; right: 10px; bottom: 10px"
+  >
+    +
+    <a href="/playlists/add" class="stretched-link"></a>
+  </button>
+  <%- include("./components/footer") %>
+</body>
