@@ -9,8 +9,11 @@ const deleteTrackMW = require("../middleware/tracks/deleteTrackMW");
 const getPlaylistsMW = require("../middleware/playlists/getPlaylistsMW");
 const getPlaylistMW = require("../middleware/playlists/getPlaylistMW");
 const getQueryPlaylistsMW = require("../middleware/playlists/getQueryPlaylistsMW");
+const getQueryPlaylistTracksMW = require("../middleware/playlists/getQueryPlaylistTracksMW");
+const addTrackToPlaylistMW = require("../middleware/playlists/addTrackToPlaylistMW");
 const savePlaylistMW = require("../middleware/playlists/savePlaylistMW");
 const deletePlaylistMW = require("../middleware/playlists/deletePlaylistMW");
+const deletePlaylistTrackMW = require("../middleware/playlists/deletePlaylistTrackMW");
 
 module.exports = (app) => {
   const objRepo = {
@@ -119,6 +122,25 @@ module.exports = (app) => {
     "/playlist/:playlistID",
     getPlaylistMW(objRepo),
     renderMW(objRepo, "playlistdetails")
+  );
+
+  app.get(
+    "/playlist/:playlistID/search",
+    getPlaylistMW(objRepo),
+    getQueryPlaylistTracksMW(objRepo),
+    renderMW(objRepo, "playlistdetails")
+  );
+
+  app.post(
+    "/playlist/:playlistID/add",
+    getPlaylistMW(objRepo),
+    addTrackToPlaylistMW(objRepo)
+  );
+
+  app.get(
+    "/playlist/:playlistID/delete/:trackID",
+    getPlaylistMW(objRepo),
+    deletePlaylistTrackMW(objRepo)
   );
 
   app.get("/playlists/add", renderMW(objRepo, "createplaylist"));
