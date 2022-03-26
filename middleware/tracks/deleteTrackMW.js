@@ -6,7 +6,7 @@
 
 module.exports = (objRepo) => {
   return (req, res, next) => {
-    const idx = objRepo.find((t) => t._id === res.locals.track._id);
+    const idx = objRepo.tracks.find((t) => t._id === res.locals.track._id);
 
     objRepo.tracks = objRepo.tracks.splice(idx, 1);
 
