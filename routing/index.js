@@ -17,18 +17,21 @@ module.exports = (app) => {
     tracks: [
       {
         _id: "ObjectID_T1",
+        url: "https://www.youtube.com/embed/lF8s2bZUwlM",
         title: "Rise",
         artist: "Skillet",
         description: "One of the greatest songs on the album Rise",
       },
       {
         _id: "ObjectID_T2",
+        url: "https://www.youtube.com/embed/lF8s2bZUwlM",
         title: "Awake and Alive",
         artist: "Skillet",
         description: "One of the greatest songs on the album Awake",
       },
       {
         _id: "ObjectID_T3",
+        url: "https://www.youtube.com/embed/lF8s2bZUwlM",
         title: "Hero",
         artist: "Skillet",
         description: "One of the greatest songs on the album Awake",
@@ -41,12 +44,14 @@ module.exports = (app) => {
         tracks: [
           {
             _id: "ObjectID_T1",
+            url: "https://www.youtube.com/embed/lF8s2bZUwlM",
             title: "Rise",
             artist: "Skillet",
             description: "One of the greatest songs on the album Rise",
           },
           {
             _id: "ObjectID_T2",
+            url: "https://www.youtube.com/embed/lF8s2bZUwlM",
             title: "Awake and Alive",
             artist: "Skillet",
             description: "One of the greatest songs on the album Awake",
@@ -59,6 +64,7 @@ module.exports = (app) => {
         tracks: [
           {
             _id: "ObjectID_T3",
+            url: "https://www.youtube.com/embed/lF8s2bZUwlM",
             title: "Hero",
             artist: "Skillet",
             description: "One of the greatest songs on the album Awake",
@@ -78,7 +84,11 @@ module.exports = (app) => {
     renderMW(objRepo, "tracks")
   );
 
-  app.post("/tracks/add", saveTrackMW(objRepo));
+  app.use(
+    "/tracks/add",
+    saveTrackMW(objRepo),
+    renderMW(objRepo, "trackEditNewForm")
+  );
 
   app.use(
     "/tracks/edit/:trackID",

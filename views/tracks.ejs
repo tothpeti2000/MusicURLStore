@@ -55,14 +55,9 @@
   >
     <div class="alert alert-primary text-center p-5 rounded-pill shadow">
       <h1 class="fst-italic">Found a nice song?</h1>
-      <button
-        type="button"
-        class="btn btn-primary w-100"
-        data-bs-toggle="modal"
-        data-bs-target="#addModal"
-      >
-        ADD IT HERE
-      </button>
+      <a href="/tracks/add">
+        <button type="button" class="btn btn-primary w-100">ADD IT HERE</button>
+      </a>
     </div>
 
     <div class="shadow">
@@ -80,9 +75,5 @@
       </div>
     </div>
   </aside>
-
-  <%- include("./components/forms/addTrackForm") %> <%-
-  include("./components/forms/editTrackForm") %> <%-
-  include("./components/forms/deleteTrackForm") %> <%-
-  include("./components/footer") %>
+  <%- include("./components/footer") %>
 </body>

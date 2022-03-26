@@ -3,45 +3,35 @@
 <body>
   <%- include("./components/navbar") %>
 
-  <form action="/tracks/edit/1" method="POST">
+  <form action="/tracks/add" method="POST">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Edit Track</h5>
+          <h5 class="modal-title" id="exampleModalLabel">
+            <%= typeof track === "undefined" ? "Add Track" : "Edit Track" %>
+          </h5>
           <button type="button" class="btn-close" aria-label="Close"></button>
         </div>
         <div class="modal-body">
           <div class="mb-3">
             <label for="url" class="form-label fw-bold">URL</label>
-            <input
-              type="text"
-              class="form-control"
-              id="url"
-              aria-describedby="URL"
-              value="https://www.youtube.com/watch?v=lF8s2bZUwlM"
-            />
+            <input type="text" class="form-control" id="url"
+            aria-describedby="URL" value="<%= typeof track === "undefined" ? ""
+            : track.url %>" />
           </div>
 
           <div class="mb-3">
             <label for="title" class="form-label fw-bold">Title</label>
-            <input
-              type="text"
-              class="form-control"
-              id="title"
-              aria-describedby="Title"
-              value="Ignite"
-            />
+            <input type="text" class="form-control" id="title"
+            aria-describedby="Title" value="<%= typeof track === "undefined" ?
+            "" : track.title %>" />
           </div>
 
           <div class="mb-3">
             <label for="artist" class="form-label fw-bold">Artist</label>
-            <input
-              type="text"
-              class="form-control"
-              id="artist"
-              aria-describedby="Artist"
-              value="Skillet"
-            />
+            <input type="text" class="form-control" id="artist"
+            aria-describedby="Artist" value="<%= typeof track === "undefined" ?
+            "" : track.artist %>" />
           </div>
 
           <div class="mb-3">
@@ -54,7 +44,8 @@
               id="description"
               aria-describedby="Description"
             >
-  Those guitar riffs are insane
+<%= typeof track === "undefined" ? ""
+            : track.description %>
                   </textarea
             >
           </div>
