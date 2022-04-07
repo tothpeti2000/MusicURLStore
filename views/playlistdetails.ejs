@@ -1,7 +1,7 @@
-<%- include("./components/header") %>
+<%- include("./components/common/header") %>
 
 <body>
-  <%- include("./components/navbar") %>
+  <%- include("./components/common/navbar") %>
 
   <main class="p-4">
     <div class="d-flex justify-content-between mb-2">
@@ -11,7 +11,7 @@
         ></a>
         <%= playlist.name %> Playlist
       </h1>
-      <%- include("./components/playListTrackSearchBar") %>
+      <%- include("./components/searchbars/playListTrackSearchBar") %>
     </div>
 
     <table class="table table-hover table-striped" style="width: 60%">
@@ -258,5 +258,5 @@ Those guitar riffs are insane
     </div>
   </div>
 
-  <%- include("./components/footer") %>
+  <%- include("./components/common/footer") %>
 </body>
