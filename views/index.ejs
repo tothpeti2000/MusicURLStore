@@ -1,22 +1,13 @@
 <%- include("./components/common/header") %> <% const options = [{ title: `Add,
-edit or listen to your favorite tracks`, link: `/tracks`, icon:
-`bi-music-note`}, {title: `Create and manage playlists from your favorite
-tracks`, link: `/playlists`, icon: `bi-music-note-list`} ] %>
+edit or listen to your favorite tracks`, link: `/tracks`, icon: `bi-music-note`
+}, { title: `Create and manage playlists from your favorite tracks`, link:
+`/playlists`, icon: `bi-music-note-list` }] %>
 
 <body class="vh-100">
   <%- include("./components/common/navbar") %>
   <main class="d-flex justify-content-around align-items-center h-75">
-    <% options.forEach(option => { %>
-    <div class="card w-25 shadow-lg text-center zoom">
-      <h1 class="card-img-top bg-primary" style="padding: 20%; font-size: 5rem">
-        <i class="bi <%= option.icon %> text-light"></i>
-      </h1>
-      <div class="card-body">
-        <p class="card-text fs-4"><%= option.title %></p>
-      </div>
-      <a href="<%= option.link %>" class="stretched-link"></a>
-    </div>
-    <% }) %>
+    <% options.forEach(option => { %> <%- include("./components/optionCard", {
+    option: option }) %> <% }) %>
   </main>
 </body>
 
