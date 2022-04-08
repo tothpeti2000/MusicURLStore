@@ -4,15 +4,9 @@
   <%- include("./components/common/navbar") %>
 
   <main class="p-4">
-    <div class="d-flex justify-content-between mb-2">
-      <h1>
-        <a href="/playlists" class="text-muted me-2"
-          ><i class="bi bi-arrow-left"></i
-        ></a>
-        <%= playlist.name %> Playlist
-      </h1>
-      <%- include("./components/searchbars/playListTrackSearchBar") %>
-    </div>
+    <%- include("./components/titleBar", { link: "/playlists", title:
+    playlist.name + " Playlist", searchLink: `playlist/${playlist._id}/search`})
+    %>
 
     <table class="table table-hover table-striped" style="width: 60%">
       <thead>
