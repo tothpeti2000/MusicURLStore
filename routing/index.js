@@ -145,6 +145,7 @@ module.exports = (app) => {
 
   app.use(
     "/playlists/add",
+    getTracksMW(objRepo),
     savePlaylistMW(objRepo),
     renderMW(objRepo, "createplaylist")
   );

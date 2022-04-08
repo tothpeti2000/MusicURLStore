@@ -7,6 +7,6 @@
 
 module.exports = (objRepo) => {
   return (req, res, next) => {
-    return res.redirect("/playlists");
+    return next();
   };
 };
