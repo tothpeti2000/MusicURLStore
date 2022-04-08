@@ -3,39 +3,9 @@
 <body>
   <%- include("./components/common/navbar") %>
   <main class="p-4">
-    <%- include("./components/titleBar", { link: "/", title: "My Tracks", searchLink: "/tracks/search" }) %>
-
-    <table class="table table-hover table-striped" style="width: 60%">
-      <thead>
-        <tr>
-          <th>TITLE</th>
-          <th>ARTIST</th>
-          <th>DESCRIPTION</th>
-          <th>OPTIONS</th>
-        </tr>
-      </thead>
-
-      <tbody class="align-text-top">
-        <% tracks.forEach(track => { %>
-        <tr>
-          <td><%= track.title %></td>
-          <td><%= track.artist %></td>
-          <td><%= track.description %></td>
-          <td>
-            <i class="bi bi-play-circle-fill btn"></i>
-            <a href="/tracks/edit/<%= track._id %>">
-              <i class="bi bi-pencil-fill btn"></i
-            ></a>
-            <i
-              class="bi bi-trash3-fill btn"
-              data-bs-toggle="modal"
-              data-bs-target="#deleteModal"
-            ></i>
-          </td>
-        </tr>
-        <% }) %>
-      </tbody>
-    </table>
+    <%- include("./components/titleBar", { link: "/", title: "My Tracks",
+    searchLink: "/tracks/search" }) %> <%- include("./components/tracksTable", {
+    tracks: tracks, optionsAvailable: true }) %>
   </main>
 
   <aside
