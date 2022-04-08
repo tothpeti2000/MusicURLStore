@@ -1,9 +1,10 @@
-<%- include("./components/common/header") %>
+<%- include("./components/common/header") %> <% const action = typeof track ===
+"undefined" ? "/tracks/add" : `/tracks/edit/${track._id}` %>
 
 <body>
   <%- include("./components/common/navbar") %>
 
-  <form action="/tracks/edit/ObjectID_T1" method="POST">
+  <form action="<%= action %>" method="POST">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
@@ -15,23 +16,23 @@
         <div class="modal-body">
           <div class="mb-3">
             <label for="url" class="form-label fw-bold">URL</label>
-            <input type="text" class="form-control" id="url"
-            aria-describedby="URL" value="<%= typeof track === "undefined" ? ""
-            : track.url %>" />
+            <input type="text" class="form-control" id="url" name="url"
+            aria-describedby="URL" value=<%= typeof track === "undefined" ? "" :
+            track.url %>>
           </div>
 
           <div class="mb-3">
             <label for="title" class="form-label fw-bold">Title</label>
-            <input type="text" class="form-control" id="title"
-            aria-describedby="Title" value="<%= typeof track === "undefined" ?
-            "" : track.title %>" />
+            <input type="text" class="form-control" id="title" name="title"
+            aria-describedby="Title" value=<%= typeof track === "undefined" ? ""
+            : track.title %>>
           </div>
 
           <div class="mb-3">
             <label for="artist" class="form-label fw-bold">Artist</label>
-            <input type="text" class="form-control" id="artist"
-            aria-describedby="Artist" value="<%= typeof track === "undefined" ?
-            "" : track.artist %>" />
+            <input type="text" class="form-control" id="artist" name="artist"
+            aria-describedby="Artist" value=<%= typeof track === "undefined" ?
+            "" : track.artist %>>
           </div>
 
           <div class="mb-3">
@@ -42,6 +43,7 @@
               type="text"
               class="form-control"
               id="description"
+              name="description"
               aria-describedby="Description"
             >
 <%= typeof track === "undefined" ? ""
