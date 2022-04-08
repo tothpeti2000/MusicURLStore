@@ -4,5 +4,6 @@
       ><i class="bi bi-arrow-left"></i></a
     ><%= title %>
   </h1>
-  <%- include("./searchBar", { link: searchLink }) %>
+  <% if (typeof searchLink !== "undefined") { %> <%- include("./searchBar", {
+  link: searchLink }) %> <% } %>
 </div>
