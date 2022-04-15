@@ -6,6 +6,8 @@
  */
 
 module.exports = (objRepo) => {
+  const trackModel = objRepo.trackModel;
+
   return (req, res, next) => {
     if (
       typeof req.body.url === "undefined" ||
@@ -16,23 +18,25 @@ module.exports = (objRepo) => {
       return next();
     }
 
-    if (typeof res.locals.track === "undefined") {
-      const track = {
-        _id: "ObjectID_T4",
-        url: req.body.url,
-        title: req.body.title,
-        artist: req.body.artist,
-        description: req.body.description,
-      };
+    let track;
 
-      objRepo.tracks.push(track);
+    if (typeof res.locals.track === "undefined") {
+      track = new trackModel();
     } else {
-      res.locals.track.url = req.body.url;
-      res.locals.track.title = req.body.title;
-      res.locals.track.artist = req.body.artist;
-      res.locals.track.description = req.body.description;
+      track = res.locals.track;
     }
 
-    return res.redirect("/tracks");
+    track.url = req.body.url;
+    track.title = req.body.title;
+    track.artist = req.body.artist;
+    track.description = req.body.description;
+
+    track.save((err) => {
+      if (err) {
+        return next(err);
+      }
+
+      return res.redirect("/tracks");
+    });
   };
 };
