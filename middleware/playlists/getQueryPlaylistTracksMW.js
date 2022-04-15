@@ -5,13 +5,13 @@
 
 module.exports = (objRepo) => {
   return (req, res, next) => {
-    const queryTracks = res.locals.playlist.tracks.filter(
+    /*const queryTracks = res.locals.playlist.tracks.filter(
       (t) =>
         t.title.toUpperCase().includes(req.query.q.toUpperCase()) ||
         t.artist.toUpperCase().includes(req.query.q.toUpperCase())
     );
 
-    res.locals.playlist.tracks = queryTracks;
+    res.locals.playlist.tracks = queryTracks;*/
 
     return next();
   };

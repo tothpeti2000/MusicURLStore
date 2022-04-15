@@ -5,7 +5,7 @@
 
 module.exports = (objRepo) => {
   return (req, res, next) => {
-    res.locals.track = objRepo.tracks.find((t) => t._id === req.params.trackID);
+    //res.locals.track = objRepo.tracks.find((t) => t._id === req.params.trackID);
 
     return next();
   };

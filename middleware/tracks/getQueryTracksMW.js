@@ -5,11 +5,11 @@
 
 module.exports = (objRepo) => {
   return (req, res, next) => {
-    res.locals.tracks = objRepo.tracks.filter(
+    /*res.locals.tracks = objRepo.tracks.filter(
       (t) =>
         t.title.toUpperCase().includes(req.query.q.toUpperCase()) ||
         t.artist.toUpperCase().includes(req.query.q.toUpperCase())
-    );
+    );*/
 
     return next();
   };

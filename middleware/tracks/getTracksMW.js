@@ -5,7 +5,7 @@
 
 module.exports = (objRepo) => {
   return (req, res, next) => {
-    res.locals.tracks = objRepo.tracks;
+    //res.locals.tracks = objRepo.tracks;
 
     return next();
   };

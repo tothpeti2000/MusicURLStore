@@ -5,9 +5,9 @@
 
 module.exports = (objRepo) => {
   return (req, res, next) => {
-    res.locals.playlists = objRepo.playlists.filter((p) =>
+    /*res.locals.playlists = objRepo.playlists.filter((p) =>
       p.name.toUpperCase().includes(req.query.q.toUpperCase())
-    );
+    );*/
 
     return next();
   };

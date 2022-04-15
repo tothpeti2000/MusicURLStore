@@ -5,7 +5,7 @@
 
 module.exports = (objRepo) => {
   return (req, res, next) => {
-    res.locals.playlists = objRepo.playlists;
+    //res.locals.playlists = objRepo.playlists;
 
     return next();
   };
