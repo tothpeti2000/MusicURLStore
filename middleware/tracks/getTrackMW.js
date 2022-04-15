@@ -4,8 +4,21 @@
  */
 
 module.exports = (objRepo) => {
+  const trackModel = objRepo.taskModel;
+
   return (req, res, next) => {
-    //res.locals.track = objRepo.tracks.find((t) => t._id === req.params.trackID);
+    trackModel.find({ _id: req.params.trackID }).exec((err, data) => {
+      if (err) {
+        return next(err);
+      }
+
+      if (!data) {
+        return res.redirect("/tracks");
+      }
+
+      res.locals.track = data;
+      return next();
+    });
 
     return next();
   };
