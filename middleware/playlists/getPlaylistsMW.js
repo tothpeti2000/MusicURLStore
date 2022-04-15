@@ -4,9 +4,16 @@
  */
 
 module.exports = (objRepo) => {
-  return (req, res, next) => {
-    //res.locals.playlists = objRepo.playlists;
+  const playlistModel = objRepo.playlistModel;
 
-    return next();
+  return (req, res, next) => {
+    playlistModel.find({}).exec((err, data) => {
+      if (err) {
+        return next(err);
+      }
+
+      res.locals.playlists = data;
+      return next();
+    });
   };
 };
