@@ -4,7 +4,7 @@
  */
 
 module.exports = (objRepo) => {
-  const trackModel = objRepo.taskModel;
+  const trackModel = objRepo.trackModel;
 
   return (req, res, next) => {
     trackModel.find({}).exec((err, data) => {

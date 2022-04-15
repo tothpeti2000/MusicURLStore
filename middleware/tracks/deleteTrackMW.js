@@ -6,13 +6,16 @@
 
 module.exports = (objRepo) => {
   return (req, res, next) => {
-    /*console.log(res.locals.track);
-    const idx = objRepo.tracks.findIndex((t) => t._id === res.locals.track._id);
-    console.log(idx);
+    if (typeof res.locals.track === "undefined") {
+      return next();
+    }
 
-    objRepo.tracks.splice(idx, 1);
-    console.log(objRepo.tracks);*/
+    res.locals.track.remove((err) => {
+      if (err) {
+        return next(err);
+      }
 
-    return res.redirect("/tracks");
+      res.redirect("/tracks");
+    });
   };
 };

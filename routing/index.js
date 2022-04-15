@@ -15,11 +15,11 @@ const savePlaylistMW = require("../middleware/playlists/savePlaylistMW");
 const deletePlaylistMW = require("../middleware/playlists/deletePlaylistMW");
 const deletePlaylistTrackMW = require("../middleware/playlists/deletePlaylistTrackMW");
 
-const taskModel = require("../models/track");
+const trackModel = require("../models/track");
 
 module.exports = (app) => {
   const objRepo = {
-    taskModel: taskModel,
+    trackModel: trackModel,
   };
 
   app.get("/", renderMW(objRepo, "index"));
