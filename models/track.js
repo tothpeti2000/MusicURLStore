@@ -1,6 +1,6 @@
 const db = require("../db/db");
 
-const Track = db.Model("Track", {
+const Track = db.model("Track", {
   title: String,
   url: String,
   artist: String,
