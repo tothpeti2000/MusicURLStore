@@ -1,4 +1,3 @@
-const { Schema } = require("mongoose");
 const db = require("../db/db");
 
 const Track = db.Model("Track", {
@@ -7,3 +6,5 @@ const Track = db.Model("Track", {
   artist: String,
   description: String,
 });
+
+module.exports = Track;

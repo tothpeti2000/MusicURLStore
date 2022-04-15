@@ -15,66 +15,11 @@ const savePlaylistMW = require("../middleware/playlists/savePlaylistMW");
 const deletePlaylistMW = require("../middleware/playlists/deletePlaylistMW");
 const deletePlaylistTrackMW = require("../middleware/playlists/deletePlaylistTrackMW");
 
+const taskModel = require("../models/track");
+
 module.exports = (app) => {
   const objRepo = {
-    tracks: [
-      {
-        _id: "ObjectID_T1",
-        url: "https://www.youtube.com/embed/lF8s2bZUwlM",
-        title: "Rise",
-        artist: "Skillet",
-        description: "One of the greatest songs on the album Rise",
-      },
-      {
-        _id: "ObjectID_T2",
-        url: "https://www.youtube.com/embed/lF8s2bZUwlM",
-        title: "Awake and Alive",
-        artist: "Skillet",
-        description: "One of the greatest songs on the album Awake",
-      },
-      {
-        _id: "ObjectID_T3",
-        url: "https://www.youtube.com/embed/lF8s2bZUwlM",
-        title: "Hero",
-        artist: "Skillet",
-        description: "One of the greatest songs on the album Awake",
-      },
-    ],
-    playlists: [
-      {
-        _id: "ObjectID_P1",
-        name: "Skillet",
-        tracks: [
-          {
-            _id: "ObjectID_T1",
-            url: "https://www.youtube.com/embed/lF8s2bZUwlM",
-            title: "Rise",
-            artist: "Skillet",
-            description: "One of the greatest songs on the album Rise",
-          },
-          {
-            _id: "ObjectID_T2",
-            url: "https://www.youtube.com/embed/lF8s2bZUwlM",
-            title: "Awake and Alive",
-            artist: "Skillet",
-            description: "One of the greatest songs on the album Awake",
-          },
-        ],
-      },
-      {
-        _id: "ObjectID_P2",
-        name: "Skillet Playlist",
-        tracks: [
-          {
-            _id: "ObjectID_T3",
-            url: "https://www.youtube.com/embed/lF8s2bZUwlM",
-            title: "Hero",
-            artist: "Skillet",
-            description: "One of the greatest songs on the album Awake",
-          },
-        ],
-      },
-    ],
+    taskModel: taskModel,
   };
 
   app.get("/", renderMW(objRepo, "index"));
