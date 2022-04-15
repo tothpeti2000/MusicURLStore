@@ -4,9 +4,16 @@
  */
 
 module.exports = (objRepo) => {
-  return (req, res, next) => {
-    //res.locals.tracks = objRepo.tracks;
+  const trackModel = objRepo.taskModel;
 
-    return next();
+  return (req, res, next) => {
+    trackModel.find({}).exec((err, data) => {
+      if (err) {
+        return next(err);
+      }
+
+      res.locals.tracks = data;
+      return next();
+    });
   };
 };
