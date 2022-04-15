@@ -5,17 +5,19 @@
  */
 
 module.exports = (objRepo) => {
+  const trackModel = objRepo.trackModel;
+
   return (req, res, next) => {
     if (typeof res.locals.track === "undefined") {
-      return next();
+      return res.redirect("/");
     }
 
-    res.locals.track.remove((err) => {
+    trackModel.deleteOne({ _id: res.locals.track._id }, (err) => {
       if (err) {
         return next(err);
       }
 
-      res.redirect("/tracks");
+      return res.redirect("/tracks");
     });
   };
 };

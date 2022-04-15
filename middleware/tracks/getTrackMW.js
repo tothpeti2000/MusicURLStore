@@ -7,7 +7,7 @@ module.exports = (objRepo) => {
   const trackModel = objRepo.trackModel;
 
   return (req, res, next) => {
-    trackModel.find({ _id: req.params.trackID }).exec((err, data) => {
+    trackModel.findOne({ _id: req.params.trackID }).exec((err, data) => {
       if (err) {
         return next(err);
       }
@@ -19,7 +19,5 @@ module.exports = (objRepo) => {
       res.locals.track = data;
       return next();
     });
-
-    return next();
   };
 };
