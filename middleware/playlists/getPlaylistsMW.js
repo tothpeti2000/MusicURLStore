@@ -7,13 +7,16 @@ module.exports = (objRepo) => {
   const playlistModel = objRepo.playlistModel;
 
   return (req, res, next) => {
-    playlistModel.find({}).exec((err, data) => {
-      if (err) {
-        return next(err);
-      }
+    playlistModel
+      .find({})
+      .populate("_tracks")
+      .exec((err, data) => {
+        if (err) {
+          return next(err);
+        }
 
-      res.locals.playlists = data;
-      return next();
-    });
+        res.locals.playlists = data;
+        return next();
+      });
   };
 };

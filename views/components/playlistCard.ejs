@@ -9,8 +9,8 @@
   <div class="card-body">
     <h2><%= playlist.name %></h2>
     <p>
-      <%= typeof playlist.tracks === "undefined" ? "0" : playlist.tracks.length
-      %> tracks
+      <%= typeof playlist._tracks === "undefined" ? "0" :
+      playlist._tracks.length %> tracks
     </p>
   </div>
   <a href="/playlist/<%= playlist._id %>" class="stretched-link"></a>
