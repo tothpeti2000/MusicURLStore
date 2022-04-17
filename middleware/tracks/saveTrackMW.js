@@ -8,7 +8,7 @@
 module.exports = (objRepo) => {
   const trackModel = objRepo.trackModel;
 
-  return (req, res, next) => {
+  return async (req, res, next) => {
     if (
       typeof req.body.url === "undefined" ||
       typeof req.body.title === "undefined" ||
@@ -31,12 +31,11 @@ module.exports = (objRepo) => {
     track.artist = req.body.artist;
     track.description = req.body.description;
 
-    track.save((err) => {
-      if (err) {
-        return next(err);
-      }
-
+    try {
+      await track.save();
       return res.redirect("/tracks");
-    });
+    } catch (err) {
+      return next(err);
+    }
   };
 };
