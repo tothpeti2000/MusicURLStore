@@ -6,18 +6,18 @@
 module.exports = (objRepo) => {
   const trackModel = objRepo.trackModel;
 
-  return (req, res, next) => {
-    trackModel.findOne({ _id: req.params.trackID }).exec((err, data) => {
-      if (err) {
-        return next(err);
-      }
+  return async (req, res, next) => {
+    try {
+      const track = await trackModel.findById(req.params.trackID).exec();
 
-      if (!data) {
+      if (track) {
+        res.locals.track = track;
+        return next();
+      } else {
         return res.redirect("/tracks");
       }
-
-      res.locals.track = data;
-      return next();
-    });
+    } catch (err) {
+      return next(err);
+    }
   };
 };
