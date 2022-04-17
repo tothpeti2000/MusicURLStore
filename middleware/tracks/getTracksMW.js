@@ -6,14 +6,12 @@
 module.exports = (objRepo) => {
   const trackModel = objRepo.trackModel;
 
-  return (req, res, next) => {
-    trackModel.find({}).exec((err, data) => {
-      if (err) {
-        return next(err);
-      }
-
-      res.locals.tracks = data;
+  return async (req, res, next) => {
+    try {
+      res.locals.tracks = await trackModel.find({});
       return next();
-    });
+    } catch (err) {
+      return next(err);
+    }
   };
 };
