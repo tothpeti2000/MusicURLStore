@@ -37,14 +37,14 @@ module.exports = (app) => {
   app.use(
     "/tracks/add",
     saveTrackMW(objRepo),
-    renderMW(objRepo, "trackEditNewForm")
+    renderMW(objRepo, "trackEditNew")
   );
 
   app.use(
     "/tracks/edit/:trackID",
     getTrackMW(objRepo),
     saveTrackMW(objRepo),
-    renderMW(objRepo, "trackEditNewForm")
+    renderMW(objRepo, "trackEditNew")
   );
 
   app.get(
