@@ -4,11 +4,16 @@
  */
 
 module.exports = (objRepo) => {
-  return (req, res, next) => {
-    /*res.locals.playlists = objRepo.playlists.filter((p) =>
-      p.name.toUpperCase().includes(req.query.q.toUpperCase())
-    );*/
+  const playlistModel = objRepo.playlistModel;
 
-    return next();
+  return async (req, res, next) => {
+    const regExp = new RegExp(req.query.q, "i");
+
+    try {
+      res.locals.playlists = await playlistModel.find({ name: regExp }).exec();
+      return next();
+    } catch (err) {
+      return next(err);
+    }
   };
 };
