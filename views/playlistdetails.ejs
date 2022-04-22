@@ -6,7 +6,7 @@
   <main class="p-4">
     <%- include("./components/titleBar", { link: "/playlists", title:
     playlist.name + " Playlist", searchLink: `playlist/${playlist._id}/search`})
-    %> <%- include("./components/tracksTable", { tracks: playlist.tracks,
+    %> <%- include("./components/tracksTable", { tracks: playlist._tracks,
     optionsAvailable: true }) %>
   </main>
 

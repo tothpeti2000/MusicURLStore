@@ -4,11 +4,23 @@
  */
 
 module.exports = (objRepo) => {
-  return (req, res, next) => {
-    /*res.locals.playlist = objRepo.playlists.find(
-      (p) => p._id === req.params.playlistID
-    );*/
+  const playlistModel = objRepo.playlistModel;
 
-    return next();
+  return async (req, res, next) => {
+    try {
+      const playlist = await playlistModel
+        .findById(req.params.playlistID)
+        .populate("_tracks")
+        .exec();
+
+      if (playlist) {
+        res.locals.playlist = playlist;
+        return next();
+      } else {
+        return res.redirect("/playlists");
+      }
+    } catch (err) {
+      return next(err);
+    }
   };
 };
