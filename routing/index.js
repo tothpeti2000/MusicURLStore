@@ -78,10 +78,11 @@ module.exports = (app) => {
     renderMW(objRepo, "playlistdetails")
   );
 
-  app.post(
+  app.use(
     "/playlist/:playlistID/add",
     getPlaylistMW(objRepo),
-    addTrackToPlaylistMW(objRepo)
+    addTrackToPlaylistMW(objRepo),
+    renderMW(objRepo, "trackEditNew")
   );
 
   app.get(
@@ -94,7 +95,7 @@ module.exports = (app) => {
     "/playlists/add",
     getTracksMW(objRepo),
     savePlaylistMW(objRepo),
-    renderMW(objRepo, "createplaylist")
+    renderMW(objRepo, "playlistEditNew")
   );
 
   app.post(

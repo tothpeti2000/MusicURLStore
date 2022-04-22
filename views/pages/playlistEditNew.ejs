@@ -1,14 +1,14 @@
-<%- include("./components/common/header") %>
+<%- include("../components/common/header") %>
 
 <body>
-  <%- include("./components/common/navbar") %>
+  <%- include("../components/common/navbar") %>
 
   <main class="p-4">
-    <%- include("./components/titleBar", { link: "/playlists", title: `Create
-    Playlist`}) %> <%- include("./components/tracksTable", { tracks: tracks,
+    <%- include("../components/titleBar", { link: "/playlists", title: `Create
+    Playlist`}) %> <%- include("../components/tracksTable", { tracks: tracks,
     optionsAvailable: false }) %>
   </main>
 
-  <%- include("./components/forms/addPlaylistForm") %> <%-
-  include("./components/common/footer") %>
+  <%- include("../components/forms/addPlaylistForm") %> <%-
+  include("../components/common/footer") %>
 </body>
