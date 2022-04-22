@@ -1,12 +1,12 @@
-<%- include("./components/common/header") %>
+<%- include("../components/common/header") %>
 
 <body>
-  <%- include("./components/common/navbar") %>
+  <%- include("../components/common/navbar") %>
 
   <main class="p-4">
-    <%- include("./components/titleBar", { link: "/playlists", title:
+    <%- include("../components/titleBar", { link: "/playlists", title:
     playlist.name + " Playlist", searchLink: `playlist/${playlist._id}/search`})
-    %> <%- include("./components/tracksTable", { tracks: playlist._tracks,
+    %> <%- include("../components/tracksTable", { tracks: playlist._tracks,
     optionsAvailable: true }) %>
   </main>
 
@@ -14,13 +14,8 @@
     class="position-fixed d-flex flex-column justify-content-between p-5"
     style="top: 25%; left: 60%; width: 40%; height: 75%"
   >
-    <div class="alert alert-primary text-center p-5 rounded-pill shadow">
-      <h1 class="fst-italic">Found a nice song?</h1>
-      <a href="/playlist/<%= playlist._id %>/add">
-        <button type="button" class="btn btn-primary w-100">ADD IT HERE</button>
-      </a>
-    </div>
+    <%- include("../components/addTrack") %>
   </aside>
 
-  <%- include("./components/common/footer") %>
+  <%- include("../components/common/footer") %>
 </body>
