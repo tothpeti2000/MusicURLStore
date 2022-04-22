@@ -1,8 +1,8 @@
-<%- include("./components/common/header") %> <% const action = typeof track ===
+<%- include("../components/common/header") %> <% const action = typeof track ===
 "undefined" ? "/tracks/add" : `/tracks/edit/${track._id}` %>
 
 <body>
-  <%- include("./components/common/navbar") %>
+  <%- include("../components/common/navbar") %>
 
   <form action="<%= action %>" method="POST">
     <div class="modal-dialog">
@@ -63,4 +63,4 @@
   </form>
 </body>
 
-<%- include("./components/common/footer") %>
+<%- include("../components/common/footer") %>
