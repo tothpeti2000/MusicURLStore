@@ -8,10 +8,7 @@
   <img src="https://picsum.photos/500" alt="Skillet" class="card-img-top" />
   <div class="card-body">
     <h2><%= playlist.name %></h2>
-    <p>
-      <%= typeof playlist._tracks === "undefined" ? "0" :
-      playlist._tracks.length %> tracks
-    </p>
+    <p><%= playlist._tracks.length %> tracks</p>
   </div>
   <a href="/playlist/<%= playlist._id %>" class="stretched-link"></a>
 </div>

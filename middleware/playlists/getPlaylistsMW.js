@@ -6,17 +6,12 @@
 module.exports = (objRepo) => {
   const playlistModel = objRepo.playlistModel;
 
-  return (req, res, next) => {
-    playlistModel
-      .find({})
-      .populate("_tracks")
-      .exec((err, data) => {
-        if (err) {
-          return next(err);
-        }
-
-        res.locals.playlists = data;
-        return next();
-      });
+  return async (req, res, next) => {
+    try {
+      res.locals.playlists = await playlistModel.find({});
+      return next();
+    } catch (err) {
+      return next(err);
+    }
   };
 };
