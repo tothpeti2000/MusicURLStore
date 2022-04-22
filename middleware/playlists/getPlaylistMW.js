@@ -15,6 +15,7 @@ module.exports = (objRepo) => {
 
       if (playlist) {
         res.locals.playlist = playlist;
+        res.locals.tracks = playlist._tracks;
         return next();
       } else {
         return res.redirect("/playlists");
