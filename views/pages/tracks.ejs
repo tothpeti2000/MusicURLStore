@@ -1,26 +1,19 @@
-<%- include("./components/common/header") %>
+<%- include("../components/common/header") %>
 
 <body>
-  <%- include("./components/common/navbar") %>
+  <%- include("../components/common/navbar") %>
   <main class="p-4">
-    <%- include("./components/titleBar", { link: "/", title: "My Tracks",
-    searchLink: "/tracks/search" }) %> <%- include("./components/tracksTable", {
-    tracks: tracks, optionsAvailable: true }) %>
+    <%- include("../components/titleBar", { link: "/", title: "My Tracks",
+    searchLink: "/tracks/search" }) %> <%- include("../components/tracksTable",
+    { tracks: tracks, optionsAvailable: true }) %>
   </main>
-
   <aside
     class="position-fixed d-flex flex-column justify-content-between p-5"
     style="top: 25%; left: 60%; width: 40%; height: 75%"
   >
-    <div class="alert alert-primary text-center p-5 rounded-pill shadow">
-      <h1 class="fst-italic">Found a nice song?</h1>
-      <a href="/tracks/add">
-        <button type="button" class="btn btn-primary w-100">ADD IT HERE</button>
-      </a>
-    </div>
-
-    <%- include("./components/audioPlayer") %>
+    <%- include("../components/addTrack") %> <%-
+    include("../components/audioPlayer") %>
   </aside>
 
-  <%- include("./components/common/footer") %>
+  <%- include("../components/common/footer") %>
 </body>
