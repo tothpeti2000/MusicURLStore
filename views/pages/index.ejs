@@ -1,14 +1,14 @@
-<%- include("./components/common/header") %> <% const options = [{ title: `Add,
+<%- include("../components/common/header") %> <% const options = [{ title: `Add,
 edit or listen to your favorite tracks`, link: `/tracks`, icon: `bi-music-note`
 }, { title: `Create and manage playlists from your favorite tracks`, link:
 `/playlists`, icon: `bi-music-note-list` }] %>
 
 <body class="vh-100">
-  <%- include("./components/common/navbar") %>
+  <%- include("../components/common/navbar") %>
   <main class="d-flex justify-content-around align-items-center h-75">
-    <% options.forEach(option => { %> <%- include("./components/optionCard", {
+    <% options.forEach(option => { %> <%- include("../components/optionCard", {
     option: option }) %> <% }) %>
   </main>
 </body>
 
-<%- include("./components/common/footer") %>
+<%- include("../components/common/footer") %>
