@@ -5,13 +5,18 @@
  */
 
 module.exports = (objRepo) => {
-  return (req, res, next) => {
-    /*const idx = objRepo.playlists.findIndex(
-      (p) => p._id === res.locals.playlist._id
-    );
+  const playlistModel = objRepo.playlistModel;
 
-    objRepo.playlists = objRepo.playlists.splice(idx, 1);*/
+  return async (req, res, next) => {
+    if (typeof res.locals.playlist === "undefined") {
+      return res.redirect("/");
+    }
 
-    return res.redirect("/playlists");
+    try {
+      await playlistModel.findByIdAndDelete(res.locals.playlist._id);
+      return res.redirect("/playlists");
+    } catch (err) {
+      return next(err);
+    }
   };
 };

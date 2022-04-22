@@ -3,7 +3,7 @@
     class="bi bi-x-lg btn btn-outline-danger position-absolute"
     style="right: 0; z-index: 10"
     data-bs-toggle="modal"
-    data-bs-target="#deleteModal"
+    data-bs-target="#deleteModal<%= playlist._id %>"
   ></i>
   <img src="https://picsum.photos/500" alt="Skillet" class="card-img-top" />
   <div class="card-body">
@@ -12,3 +12,5 @@
   </div>
   <a href="/playlist/<%= playlist._id %>" class="stretched-link"></a>
 </div>
+
+<%- include("./forms/deletePlaylistForm", { playlistID: playlist._id}) %>
