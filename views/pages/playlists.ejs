@@ -1,18 +1,18 @@
-<%- include("./components/common/header") %>
+<%- include("../components/common/header") %>
 
 <body>
-  <%- include("./components/common/navbar") %>
+  <%- include("../components/common/navbar") %>
 
   <main class="p-4">
-    <%- include("./components/titleBar", { link: "/", title: "My PlayLists",
+    <%- include("../components/titleBar", { link: "/", title: "My PlayLists",
     searchLink: "/playlists/search" }) %>
 
     <div class="d-flex align-items-center flex-wrap">
       <% playlists.forEach(playlist => { %> <%-
-      include("./components/playlistCard", { playlist: playlist }) %> <% }) %>
+      include("../components/playlistCard", { playlist: playlist }) %> <% }) %>
     </div>
   </main>
 
-  <%- include("./components/playlistFAB") %> <%-
-  include("./components/common/footer") %>
+  <%- include("../components/playlistFAB") %> <%-
+  include("../components/common/footer") %>
 </body>
