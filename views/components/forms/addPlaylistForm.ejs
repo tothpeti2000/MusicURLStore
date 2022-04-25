@@ -1,16 +1,18 @@
 <form
   action="/playlists/add"
   method="POST"
+  enctype="multipart/form-data"
   class="position-fixed p-3 shadow-lg"
   style="top: 25%; left: 65%; width: 30%; height: 60%"
 >
   <div class="mb-3">
-    <label for="title" class="form-label fw-bold">Title</label>
+    <label for="name" class="form-label fw-bold">Name</label>
     <input
       type="text"
       class="form-control"
-      id="title"
-      aria-describedby="Title"
+      id="name"
+      name="name"
+      aria-describedby="Name"
     />
   </div>
 
@@ -20,6 +22,7 @@
       type="file"
       class="form-control"
       id="img"
+      name="img"
       aria-describedby="Image Cover"
     />
   </div>
@@ -29,6 +32,7 @@
     <textarea
       class="form-control"
       id="tracks"
+      name="tracks"
       aria-describedby="Choose Tracks"
     ></textarea>
   </div>

@@ -1,3 +1,8 @@
+<% const imgSrc = typeof playlist.img.data === "undefined" ?
+"https://picsum.photos/500" :
+`data:image/${playlist.img.contentType};base64,${playlist.img.data.toString('base64')}
+` %>
+
 <div class="card w-25 shadow-lg text-center m-3 img-zoom">
   <i
     class="bi bi-x-lg btn btn-outline-danger position-absolute"
@@ -5,7 +10,7 @@
     data-bs-toggle="modal"
     data-bs-target="#deleteModal<%= playlist._id %>"
   ></i>
-  <img src="https://picsum.photos/500" alt="Skillet" class="card-img-top" />
+  <img src="<%= imgSrc %>" alt="Skillet" class="card-img-top" />
   <div class="card-body">
     <h2><%= playlist.name %></h2>
     <p><%= playlist._tracks.length %> tracks</p>
