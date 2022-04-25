@@ -19,7 +19,7 @@ deleteLink = typeof playlistID === "undefined" ? "/tracks/delete" :
 
   <tbody class="align-text-top">
     <% tracks.forEach(track => { %>
-    <tr>
+    <tr draggable="<%= !optionsAvailable %>">
       <td><%= track.title %></td>
       <td><%= track.artist %></td>
       <td><%= track.description %></td>
