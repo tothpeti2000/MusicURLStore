@@ -16,7 +16,8 @@
     style="top: 25%; left: 60%; width: 40%; height: 75%"
   >
     <%- include("../components/addTrack", { link:
-    `/playlist/${playlist._id}/add` }) %>
+    `/playlist/${playlist._id}/add` }) %> <%-
+    include("../components/audioPlayer") %>
   </aside>
 
   <%- include("../components/common/footer") %>
