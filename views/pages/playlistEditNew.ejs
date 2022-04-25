@@ -4,9 +4,11 @@
   <%- include("../components/common/navbar") %>
 
   <main class="p-4">
-    <%- include("../components/titleBar", { link: "/playlists", title: `Create
-    Playlist`}) %> <%- include("../components/tracksTable", { tracks: tracks,
-    optionsAvailable: false }) %>
+    <%- include("../components/titleBar", { link: typeof playlist ===
+    "undefined" ? "/playlists" : `/playlist/${playlist._id}`, title: `${typeof
+    playlist === "undefined" ? "Create" : "Edit"} Playlist`}) %> <%-
+    include("../components/tracksTable", { tracks: tracks, optionsAvailable:
+    false }) %>
   </main>
 
   <%- include("../components/forms/addPlaylistForm") %> <%-
