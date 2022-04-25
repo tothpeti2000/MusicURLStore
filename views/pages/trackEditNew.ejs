@@ -1,8 +1,9 @@
-<%- include("../components/common/header") %> <% let action; if(typeof playlist
-=== "undefined"){ action = typeof track === "undefined" ? "/tracks/add" :
-`/tracks/edit/${track._id}` } else{ action = typeof track === "undefined" ?
-`/playlist/${playlist._id}/add` : `/playlist/${playlist._id}/edit/${track._id}`
-} %>
+<%- include("../components/common/header") %> <% let action, closeLink;
+if(typeof playlist === "undefined"){ action = typeof track === "undefined" ?
+"/tracks/add" : `/tracks/edit/${track._id}`; closeLink = "/tracks" } else{
+action = typeof track === "undefined" ? `/playlist/${playlist._id}/add` :
+`/playlist/${playlist._id}/edit/${track._id}`; closeLink =
+`/playlist/${playlist._id}` } %>
 
 <body>
   <%- include("../components/common/navbar") %>
@@ -69,7 +70,7 @@
         </div>
         <div class="modal-footer">
           <button type="submit" class="btn btn-primary">Save</button>
-          <a href="/tracks">
+          <a href="<%= closeLink %>">
             <button type="button" class="btn btn-secondary">Close</button>
           </a>
         </div>
