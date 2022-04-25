@@ -1,4 +1,4 @@
-<form action="/tracks/delete/<%= trackID %>">
+<form action="<%= `${link}/${trackID}` %>">
   <div
     class="modal fade"
     id="deleteModal<%= trackID %>"
@@ -18,7 +18,7 @@
           ></button>
         </div>
         <div class="modal-body">
-          <p>Are you sure you want to remove this song from the list?</p>
+          <p><%= text %></p>
         </div>
         <div class="modal-footer">
           <button type="submit" class="btn btn-danger">Delete</button>
