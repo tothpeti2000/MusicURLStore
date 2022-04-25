@@ -1,5 +1,8 @@
-<%- include("../components/common/header") %> <% const action = typeof track ===
-"undefined" ? "/tracks/add" : `/tracks/edit/${track._id}` %>
+<%- include("../components/common/header") %> <% let action; if(typeof playlist
+=== "undefined"){ action = typeof track === "undefined" ? "/tracks/add" :
+`/tracks/edit/${track._id}` } else{ action = typeof track === "undefined" ?
+`/playlist/${playlist._id}/add` : `/playlist/${playlist._id}/edit/${track._id}`
+} %>
 
 <body>
   <%- include("../components/common/navbar") %>
@@ -23,16 +26,28 @@
 
           <div class="mb-3">
             <label for="title" class="form-label fw-bold">Title</label>
-            <input type="text" class="form-control" id="title" name="title"
-            aria-describedby="Title" value=<%= typeof track === "undefined" ? ""
-            : track.title %>>
+            <input
+              type="text"
+              class="form-control"
+              id="title"
+              name="title"
+              aria-describedby="Title"
+              value='<%= typeof track === "undefined" ? ""
+            : track.title %>'
+            />
           </div>
 
           <div class="mb-3">
             <label for="artist" class="form-label fw-bold">Artist</label>
-            <input type="text" class="form-control" id="artist" name="artist"
-            aria-describedby="Artist" value=<%= typeof track === "undefined" ?
-            "" : track.artist %>>
+            <input
+              type="text"
+              class="form-control"
+              id="artist"
+              name="artist"
+              aria-describedby="Artist"
+              value='<%= typeof track === "undefined" ?
+            "" : track.artist %>'
+            />
           </div>
 
           <div class="mb-3">
