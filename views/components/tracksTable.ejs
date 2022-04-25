@@ -1,8 +1,9 @@
 <% const text = typeof playlistID === "undefined" ? `Are you sure you want to
 remove this song? It will be deleted from every playlist` : `Are you sure you
-want to remove this song from the playlist?`; const deleteLink = typeof
-playlistID === "undefined" ? "/tracks/delete" : `/playlist/${playlistID}/delete`
-%>
+want to remove this song from the playlist?`; const editLink = typeof playlistID
+=== "undefined" ? "/tracks/edit" : `/playlist/${playlistID}/edit`; const
+deleteLink = typeof playlistID === "undefined" ? "/tracks/delete" :
+`/playlist/${playlistID}/delete` %>
 
 <table class="table table-hover table-striped" style="width: 60%">
   <thead>
@@ -28,7 +29,7 @@ playlistID === "undefined" ? "/tracks/delete" : `/playlist/${playlistID}/delete`
           class="bi bi-play-circle-fill btn"
           onclick="StartAudioPlayer('<%= track.url %>', '<%= track.artist %>', '<%= track.title %>')"
         ></i>
-        <a href="/tracks/edit/<%= track._id %>">
+        <a href="<%= `${editLink}/${track._id}` %>">
           <i class="bi bi-pencil-fill btn"></i
         ></a>
         <i
