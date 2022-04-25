@@ -32,7 +32,12 @@ module.exports = (objRepo) => {
     track.description = req.body.description;
 
     try {
-      await track.save();
+      res.locals.track = await track.save();
+
+      if (req.params.playlistID) {
+        return next();
+      }
+
       return res.redirect("/tracks");
     } catch (err) {
       return next(err);
