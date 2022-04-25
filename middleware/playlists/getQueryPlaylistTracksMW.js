@@ -4,14 +4,14 @@
  */
 
 module.exports = (objRepo) => {
-  return (req, res, next) => {
-    /*const queryTracks = res.locals.playlist.tracks.filter(
-      (t) =>
-        t.title.toUpperCase().includes(req.query.q.toUpperCase()) ||
-        t.artist.toUpperCase().includes(req.query.q.toUpperCase())
-    );
+  return async (req, res, next) => {
+    const regExp = new RegExp(req.query.q, "i");
 
-    res.locals.playlist.tracks = queryTracks;*/
+    const tracks = res.locals.playlist._tracks;
+
+    res.locals.tracks = tracks.filter(
+      (track) => track.title.match(regExp) || track.artist.match(regExp)
+    );
 
     return next();
   };
