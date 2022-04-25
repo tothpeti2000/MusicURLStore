@@ -4,7 +4,14 @@
  */
 
 module.exports = (objRepo) => {
-  return (req, res, next) => {
-    return next();
+  return async (req, res, next) => {
+    try {
+      res.locals.playlist._tracks.remove({ _id: req.params.trackID });
+      await res.locals.playlist.save();
+
+      return res.redirect(`/playlist/${req.params.playlistID}`);
+    } catch (err) {
+      return next(err);
+    }
   };
 };
