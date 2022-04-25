@@ -34,7 +34,11 @@ module.exports = (objRepo) => {
     try {
       res.locals.track = await track.save();
 
-      if (req.params.playlistID) {
+      if (res.locals.playlist) {
+        if (typeof req.params.trackID !== "undefined") {
+          return res.redirect(`/playlist/${req.params.playlistID}`);
+        }
+
         return next();
       }
 
