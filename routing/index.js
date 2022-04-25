@@ -113,10 +113,13 @@ module.exports = (app) => {
     renderMW(objRepo, "playlistEditNew")
   );
 
-  app.post(
+  app.use(
     "/playlists/edit/:playlistID",
     getPlaylistMW(objRepo),
-    savePlaylistMW(objRepo)
+    getTracksMW(objRepo),
+    upload.single("img"),
+    savePlaylistMW(objRepo),
+    renderMW(objRepo, "playlistEditNew")
   );
 
   app.get(
