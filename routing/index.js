@@ -19,6 +19,7 @@ const trackModel = require("../models/track");
 const playlistModel = require("../models/playlist");
 
 const multer = require("multer");
+const deleteTrackFromAllPlaylistsMW = require("../middleware/tracks/deleteTrackFromAllPlaylistsMW");
 const upload = multer({ dest: "public/uploads" });
 
 module.exports = (app) => {
@@ -53,6 +54,7 @@ module.exports = (app) => {
   app.get(
     "/tracks/delete/:trackID",
     getTrackMW(objRepo),
+    deleteTrackFromAllPlaylistsMW(objRepo),
     deleteTrackMW(objRepo)
   );
 
@@ -86,6 +88,14 @@ module.exports = (app) => {
     getPlaylistMW(objRepo),
     saveTrackMW(objRepo),
     addTrackToPlaylistMW(objRepo),
+    renderMW(objRepo, "trackEditNew")
+  );
+
+  app.use(
+    "/playlist/:playlistID/edit/:trackID",
+    getPlaylistMW(objRepo),
+    getTrackMW(objRepo),
+    saveTrackMW(objRepo),
     renderMW(objRepo, "trackEditNew")
   );
 
