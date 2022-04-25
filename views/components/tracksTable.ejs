@@ -1,3 +1,9 @@
+<% const text = typeof playlistID === "undefined" ? `Are you sure you want to
+remove this song? It will be deleted from every playlist` : `Are you sure you
+want to remove this song from the playlist?`; const deleteLink = typeof
+playlistID === "undefined" ? "/tracks/delete" : `/playlist/${playlistID}/delete`
+%>
+
 <table class="table table-hover table-striped" style="width: 60%">
   <thead>
     <tr>
@@ -33,7 +39,8 @@
       </td>
       <% } %>
     </tr>
-    <%- include("./forms/deleteTrackForm", { trackID: track._id }) %> <% }) %>
+    <%- include("./forms/deleteTrackForm", { trackID: track._id, text: text,
+    deleteLink: deleteLink }) %> <% }) %>
   </tbody>
 </table>
 

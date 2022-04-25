@@ -5,8 +5,10 @@
 
   <main class="p-4">
     <%- include("../components/titleBar", { link: "/playlists", title:
-    playlist.name + " Playlist", searchLink: `playlist/${playlist._id}/search`})
-    %> <%- include("../components/tracksTable", { optionsAvailable: true }) %>
+    playlist.name + " Playlist", searchLink:
+    `/playlist/${playlist._id}/search`}) %> <%-
+    include("../components/tracksTable", { optionsAvailable: true, playlistID:
+    playlist._id }) %>
   </main>
 
   <aside
@@ -14,7 +16,7 @@
     style="top: 25%; left: 60%; width: 40%; height: 75%"
   >
     <%- include("../components/addTrack", { link:
-    `/playlist/${playlist._id}/search` }) %>
+    `/playlist/${playlist._id}/add` }) %>
   </aside>
 
   <%- include("../components/common/footer") %>
