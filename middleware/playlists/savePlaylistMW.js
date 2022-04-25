@@ -13,7 +13,7 @@ module.exports = (objRepo) => {
   return async (req, res, next) => {
     console.log("Name: " + req.body.name);
     console.log("Img: " + req.body.img);
-    console.log("Tracks: " + req.body._tracks);
+    console.log("Tracks: " + req.body.tracks);
 
     if (
       typeof req.body.name === "undefined" /*||
@@ -33,12 +33,14 @@ module.exports = (objRepo) => {
 
     playlist.name = req.body.name;
 
-    playlist.img = {
-      data: fs.readFileSync(`public/uploads/${req.file.filename}`),
-      contentType: "image/png",
-    };
+    if (req.file) {
+      playlist.img = {
+        data: fs.readFileSync(`public/uploads/${req.file.filename}`),
+        contentType: "image/png",
+      };
+    }
 
-    //playlist._tracks = req.body._tracks;
+    playlist._tracks = req.body.tracks;
 
     try {
       await playlist.save();

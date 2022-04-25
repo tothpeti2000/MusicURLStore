@@ -19,9 +19,13 @@ deleteLink = typeof playlistID === "undefined" ? "/tracks/delete" :
 
   <tbody class="align-text-top">
     <% tracks.forEach(track => { %>
-    <tr draggable="<%= !optionsAvailable %>">
-      <td><%= track.title %></td>
-      <td><%= track.artist %></td>
+    <tr
+      id="<%= track._id %>"
+      draggable="<%= !optionsAvailable %>"
+      ondragstart="Drag(event)"
+    >
+      <td id="trackTitle"><%= track.title %></td>
+      <td id="trackArtist"><%= track.artist %></td>
       <td><%= track.description %></td>
       <% if (optionsAvailable) { %>
       <td>
@@ -46,3 +50,7 @@ deleteLink = typeof playlistID === "undefined" ? "/tracks/delete" :
 </table>
 
 <script src="/js/audioPlayer.js"></script>
+
+<% if (!optionsAvailable) { %>
+<script src="/js/drag.js"></script>
+<% } %>

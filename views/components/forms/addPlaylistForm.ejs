@@ -29,12 +29,14 @@
 
   <div class="mb-3">
     <label for="tracks" class="form-label fw-bold">Choose Tracks</label>
-    <textarea
+    <div
       class="form-control"
       id="tracks"
       name="tracks"
       aria-describedby="Choose Tracks"
-    ></textarea>
+      ondrop="Drop(event)"
+      ondragover="AllowDrop(event)"
+    ></div>
   </div>
   <button type="submit" class="btn btn-outline-primary btn-lg w-100">
     Add Playlist
