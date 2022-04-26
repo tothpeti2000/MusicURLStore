@@ -15,9 +15,6 @@
     class="position-fixed d-flex flex-column justify-content-between p-5"
     style="top: 25%; left: 60%; width: 40%; height: 75%"
   >
-    <a href="<%= `/playlists/edit/${playlist._id}` %>">
-      <i class="bi bi-pencil-fill btn"></i
-    ></a>
     <%- include("../components/addTrack", { link:
     `/playlist/${playlist._id}/add` }) %> <%-
     include("../components/audioPlayer") %>

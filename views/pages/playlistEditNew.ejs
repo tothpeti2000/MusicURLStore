@@ -1,4 +1,5 @@
-<%- include("../components/common/header") %>
+<%- include("../components/common/header") %> <% const action = typeof playlist
+=== "undefined" ? "/playlists/add" : `/playlists/edit/${playlist._id}` %>
 
 <body>
   <%- include("../components/common/navbar") %>
@@ -11,6 +12,6 @@
     false }) %>
   </main>
 
-  <%- include("../components/forms/addPlaylistForm") %> <%-
+  <%- include("../components/forms/addPlaylistForm", { action: action }) %> <%-
   include("../components/common/footer") %>
 </body>
