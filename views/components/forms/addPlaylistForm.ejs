@@ -22,7 +22,6 @@
       aria-describedby="Image Cover"
     />
   </div>
-
   <div class="mb-3">
     <label for="tracks" class="form-label fw-bold">Choose Tracks</label>
     <div
@@ -50,4 +49,15 @@
 
 <script>
   document.getElementById("initTracks").click();
+
+  const buttons = document.getElementsByClassName("btn-close");
+
+  for (let i = 0; i < buttons.length; i++) {
+    buttons[i].addEventListener("click", (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+
+      HandleDelete(e.target);
+    });
+  }
 </script>

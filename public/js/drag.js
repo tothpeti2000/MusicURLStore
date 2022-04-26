@@ -31,18 +31,31 @@ const CreateInputFromTrack = (ID, title, artist) => {
   trackItem.value = ID;
   trackItem.style.display = "none";
 
-  const trackItemLabel = document.createElement("p");
-  trackItemLabel.innerHTML = `${artist} - ${title}`;
+  const label = document.createElement("span");
+  label.innerHTML = `${artist} - ${title}`;
+
+  const deleteButton = document.createElement("button");
+  deleteButton.className = "btn-close";
+  deleteButton.id = ID;
+
+  const trackItemLabel = document.createElement("div");
+  trackItemLabel.classList.add("d-flex", "justify-content-between");
+
+  trackItemLabel.appendChild(label);
+  trackItemLabel.appendChild(deleteButton);
+  trackItemLabel.appendChild(trackItem);
 
   document.getElementById("tracks").appendChild(trackItemLabel);
-  document.getElementById("tracks").appendChild(trackItem);
 };
 
 const InitPlaylistTracks = (tracks) => {
-  console.log(tracks);
   const playlistTracks = JSON.parse(tracks);
 
   playlistTracks.forEach((track) => {
     CreateInputFromTrack(track._id, track.title, track.artist);
   });
+};
+
+const HandleDelete = (button) => {
+  document.getElementById("tracks").removeChild(button.parentNode);
 };
