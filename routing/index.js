@@ -5,6 +5,7 @@ const getTrackMW = require("../middleware/tracks/getTrackMW");
 const getQueryTracksMW = require("../middleware/tracks/getQueryTracksMW");
 const saveTrackMW = require("../middleware/tracks/saveTrackMW");
 const deleteTrackMW = require("../middleware/tracks/deleteTrackMW");
+const deleteTrackFromAllPlaylistsMW = require("../middleware/tracks/deleteTrackFromAllPlaylistsMW");
 
 const getPlaylistsMW = require("../middleware/playlists/getPlaylistsMW");
 const getPlaylistMW = require("../middleware/playlists/getPlaylistMW");
@@ -19,7 +20,6 @@ const trackModel = require("../models/track");
 const playlistModel = require("../models/playlist");
 
 const multer = require("multer");
-const deleteTrackFromAllPlaylistsMW = require("../middleware/tracks/deleteTrackFromAllPlaylistsMW");
 const upload = multer({ dest: "public/uploads" });
 
 module.exports = (app) => {
