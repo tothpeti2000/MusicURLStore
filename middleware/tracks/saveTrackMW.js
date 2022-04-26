@@ -3,6 +3,9 @@
  * Otherwise, it's a POST request
  *      If res.locals.track is undefined, create a new entity, otherwise, update the track
  *      Redirect to /tracks after success
+ *
+ *      If res.locals.playlists exists, redirect to the playlist page if it's been edited
+ *      or return next() if a new playlist has been created
  */
 
 module.exports = (objRepo) => {
