@@ -1,5 +1,7 @@
 /**
  * Used entity: res.locals.track
+ * Redirect to / if it doesn't exist
+ *
  * Delete the track from the DB
  * Redirect to /tracks after success
  */

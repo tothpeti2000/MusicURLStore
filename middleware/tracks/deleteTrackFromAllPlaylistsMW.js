@@ -1,3 +1,7 @@
+/**
+ * Remove the track with the given ID from every playlist
+ */
+
 module.exports = (objRepo) => {
   const playlistModel = objRepo.playlistModel;
 

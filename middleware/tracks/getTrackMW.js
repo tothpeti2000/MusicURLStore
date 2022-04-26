@@ -1,6 +1,8 @@
 /**
  * Get the track with the given ID from the DB
  * Save the result to res.locals.track
+ *
+ * Redirect to /tracks if the track doesn't exist
  */
 
 module.exports = (objRepo) => {
