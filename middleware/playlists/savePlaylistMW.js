@@ -1,5 +1,5 @@
 /**
- * If the request body is empty, it's a GET request so simply return next()
+ * If the name field of the request body is empty, it's a GET request so simply return next()
  * Otherwise, it's a POST request
  *      If res.locals.playlist is undefined, create a new entity, otherwise, update the playlist
  *      Redirect to /playlists after success
@@ -11,15 +11,7 @@ module.exports = (objRepo) => {
   const playlistModel = objRepo.playlistModel;
 
   return async (req, res, next) => {
-    console.log("Name: " + req.body.name);
-    console.log("Img: " + req.body.img);
-    console.log("Tracks: " + req.body.tracks);
-
-    if (
-      typeof req.body.name === "undefined" /*||
-      typeof req.body.img === "undefined" ||
-      typeof req.body._tracks === "undefined"*/
-    ) {
+    if (typeof req.body.name === "undefined") {
       return next();
     }
 

@@ -1,6 +1,8 @@
 /**
- * Get the playlist with the given ID from the DB
- * Save the result to res.locals.playlist
+ * Get the playlist with the given ID including the tracks it contains from the DB
+ * If the playlist doesn't exist, return to /playlists
+ *
+ * Save the playlist to res.locals.playlist and its tracks to res.locals.tracks
  */
 
 module.exports = (objRepo) => {

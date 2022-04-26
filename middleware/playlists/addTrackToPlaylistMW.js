@@ -1,5 +1,5 @@
 /**
- * Add a new track to the playlist stored in res.locals.playlist from req.body
+ * Add a new track ID reference to the playlist stored in res.locals.playlist from res.locals.track
  * Redirect to /playlist/:playlistID after success
  */
 

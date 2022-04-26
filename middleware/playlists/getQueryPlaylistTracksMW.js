@@ -1,6 +1,8 @@
 /**
+ * Used entity: res.locals.playlist._tracks
+ *
  * Get the tracks of the given playlist from the DB whose title or artist name contains the query string
- * Save the result to res.locals.playlist.tracks
+ * Save the result to res.locals.tracks
  */
 
 module.exports = (objRepo) => {

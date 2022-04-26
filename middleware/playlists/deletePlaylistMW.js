@@ -1,5 +1,7 @@
 /**
  * Used entity: res.locals.playlist
+ * Redirect to / if it doesn't exist
+ *
  * Delete the playlist from the DB
  * Redirect to /playlists after success
  */

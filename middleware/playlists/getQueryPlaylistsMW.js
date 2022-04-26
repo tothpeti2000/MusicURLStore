@@ -1,5 +1,5 @@
 /**
- * Get the playlists from the DB whose title contains the query string
+ * Get the playlists from the DB whose name contains the query string
  * Save the result to res.locals.playlists
  */
 
