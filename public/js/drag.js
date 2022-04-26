@@ -18,6 +18,11 @@ const Drop = (e) => {
   const ID = e.dataTransfer.getData("ID");
   const title = e.dataTransfer.getData("title");
   const artist = e.dataTransfer.getData("artist");
+
+  CreateInputFromTrack(ID, title, artist);
+};
+
+const CreateInputFromTrack = (ID, title, artist) => {
   const trackItem = document.createElement("input");
 
   trackItem.type = "text";
@@ -29,6 +34,15 @@ const Drop = (e) => {
   const trackItemLabel = document.createElement("p");
   trackItemLabel.innerHTML = `${artist} - ${title}`;
 
-  e.target.appendChild(trackItemLabel);
-  e.target.appendChild(trackItem);
+  document.getElementById("tracks").appendChild(trackItemLabel);
+  document.getElementById("tracks").appendChild(trackItem);
+};
+
+const InitPlaylistTracks = (tracks) => {
+  console.log(tracks);
+  const playlistTracks = JSON.parse(tracks);
+
+  playlistTracks.forEach((track) => {
+    CreateInputFromTrack(track._id, track.title, track.artist);
+  });
 };

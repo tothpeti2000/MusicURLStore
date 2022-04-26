@@ -1,5 +1,5 @@
 <form
-  action="/playlists/add"
+  action="<%= action %>"
   method="POST"
   enctype="multipart/form-data"
   class="position-fixed p-3 shadow-lg"
@@ -7,13 +7,9 @@
 >
   <div class="mb-3">
     <label for="name" class="form-label fw-bold">Name</label>
-    <input
-      type="text"
-      class="form-control"
-      id="name"
-      name="name"
-      aria-describedby="Name"
-    />
+    <input type="text" class="form-control" id="name" name="name" value="<%=
+    typeof playlist === "undefined" ? "" : playlist.name %>"
+    aria-describedby="Name" />
   </div>
 
   <div class="mb-3">
@@ -39,6 +35,19 @@
     ></div>
   </div>
   <button type="submit" class="btn btn-outline-primary btn-lg w-100">
-    Add Playlist
+    <%= typeof playlist === "undefined" ? "Create" : "Save" %> Playlist
   </button>
 </form>
+
+<% if (typeof playlist !== "undefined") { %>
+<button
+  id="initTracks"
+  onclick="InitPlaylistTracks('<%= JSON.stringify(playlist._tracks) %>')"
+>
+  Click
+</button>
+<% } %>
+
+<script>
+  document.getElementById("initTracks").click();
+</script>

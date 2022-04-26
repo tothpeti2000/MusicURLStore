@@ -11,3 +11,7 @@
 .img-zoom {
   overflow: hidden;
 }
+
+#initTracks {
+  display: none;
+}
