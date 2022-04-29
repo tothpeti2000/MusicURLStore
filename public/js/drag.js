@@ -38,6 +38,13 @@ const CreateInputFromTrack = (ID, title, artist) => {
   deleteButton.className = "btn-close";
   deleteButton.id = ID;
 
+  deleteButton.addEventListener("click", (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+
+    HandleDelete(e.target);
+  });
+
   const trackItemLabel = document.createElement("div");
   trackItemLabel.classList.add("d-flex", "justify-content-between");
 
