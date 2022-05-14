@@ -1,5 +1,5 @@
 const expect = require("chai").expect;
-var getTracksMW = require("../../middleware/tracks/getTracksMW");
+const getTracksMW = require("../../middleware/tracks/getTracksMW");
 
 describe("getTracksMW", () => {
   it("should return all tracks", async () => {
@@ -26,9 +26,13 @@ describe("getTracksMW", () => {
 
   it("should return error when a DB error occurs", async () => {
     const req = {};
-    const res = {};
+    const res = {
+      locals: {},
+    };
 
     const next = (err) => {
+      expect(res.locals.tracks).to.eql(undefined);
+      expect(err).not.to.eql(undefined);
       expect(err.message).to.eql(
         "An error occurred while trying to process your request"
       );
