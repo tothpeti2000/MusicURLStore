@@ -1,5 +1,5 @@
 const expect = require("chai").expect;
-var getPlaylistsMW = require("../../middleware/playlists/getPlaylistsMW");
+const getPlaylistsMW = require("../../middleware/playlists/getPlaylistsMW");
 
 describe("getPlaylistsMW", () => {
   it("should return all playlists", async () => {
@@ -26,9 +26,13 @@ describe("getPlaylistsMW", () => {
 
   it("should return error when a DB error occurs", async () => {
     const req = {};
-    const res = {};
+    const res = {
+      locals: {},
+    };
 
     const next = (err) => {
+      expect(res.locals.playlist).to.eql(undefined);
+      expect(err).not.to.eql(undefined);
       expect(err.message).to.eql(
         "An error occurred while trying to process your request"
       );
